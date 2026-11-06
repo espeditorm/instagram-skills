@@ -11,23 +11,29 @@ O estilo vem das referências de 06/11; não copia nenhum post delas.
 - **Capa:** fundo de cor sólida. Título-tese em CAIXA ALTA numa sem serifa,
   centralizado, de 3 a 4 linhas. Embaixo, uma linha pequena em minúsculas que
   vira o jogo.
-- **Páginas internas:** fundo num tom bem claro da cor da capa. Texto corrido
+- **Páginas internas:** fundo creme (#FDF0D5). Texto corrido
   grande, alinhado à esquerda, em tom de conversa, no máximo uns 35 palavras
   por página.
 - **Última página:** a pergunta devolvida para quem lê, e `studiodito.co`.
 - **Numeração:** "02/07" no canto inferior direito, igual em todas as páginas.
 - **Fonte:** uma família só, sem serifa: Archivo, ou Inter como alternativa.
   Bold nos títulos, regular no texto.
-- **Paleta de capas:** 6 cores fixas, e cada post usa uma.
+- **Paleta (atualizada em 06/11/2026):** 7 cores. As capas e a última página
+  usam uma cor por post; as páginas internas são todas creme, o que deixa a
+  grade unida mesmo com capas de cores diferentes.
 
-| Cor | Capa | Texto da capa | Páginas internas |
-|---|---|---|---|
-| Terracota | #C4532D | creme #F4EDDC | #F6E3DA |
-| Azul | #2F5FA7 | creme #F4EDDC | #E1E9F4 |
-| Verde-limão | #C9D64B | tinta #1E1E1C | #F1F4D6 |
-| Musgo | #4B5E4E | creme #F4EDDC | #E3EAE3 |
-| Lilás | #9C7FD0 | creme #F4EDDC | #ECE5F7 |
-| Salmão | #F2A58C | tinta #1E1E1C | #FBE8E1 |
+| Cor | Hex | Texto em cima | Contraste | Uso |
+|---|---|---|---|---|
+| Verde | #A7C957 | tinta #1E1E1C | 8,9:1 | capa |
+| Vermelho | #C1121F | creme #FDF0D5 | 5,5:1 | capa |
+| Creme | #FDF0D5 | tinta #1E1E1C | alto | todas as páginas internas |
+| Azul | #669BBC | tinta #1E1E1C | 5,5:1 | capa |
+| Rosa | #FF006E | tinta #1E1E1C | 4,4:1 | capa (só título grande) |
+| Amarelo | #FFBE0B | tinta #1E1E1C | 10,0:1 | capa |
+| Laranja | #FB5607 | tinta #1E1E1C | 5,1:1 | capa |
+
+O rosa fica um pouco abaixo de 4,5:1: funciona no título grande da capa, mas
+evite texto pequeno em cima dele.
 
 **Imagens:** as páginas 2 e 4 de cada carrossel têm uma imagem ocupando uma
 faixa de largura total (1080x720), com o texto acima, como na referência.
@@ -42,16 +48,16 @@ puder, principalmente no carrossel 9 (as cadeiras da praia).
 
 | # | Carrossel | Cor | Editar |
 |---|---|---|---|
-| 1 | A estética do genérico | terracota | https://www.canva.com/d/PFZbguV76HMKdSv |
-| 2 | O designer não vai acabar | azul | https://www.canva.com/d/soR5PSNoqOOofrU |
-| 3 | Todo app quer seu tempo | verde-limão | https://www.canva.com/d/8wAh6-8YySbugQ1 |
-| 4 | O fim do esforço visível | musgo | https://www.canva.com/d/1Ymj_GZmEWqleP5 |
-| 5 | Cansados de novidade | lilás | https://www.canva.com/d/wwoQ-s0HJAJ742o |
-| 6 | Quem desenhou o seu dia? | salmão | https://www.canva.com/d/YAwj34KUZzqToFl |
-| 7 | A IA que concorda com tudo | terracota | https://www.canva.com/d/YZpMMZ72v4-ErYA |
+| 1 | A estética do genérico | vermelho | https://www.canva.com/d/PFZbguV76HMKdSv |
+| 2 | O designer não vai acabar | laranja | https://www.canva.com/d/soR5PSNoqOOofrU |
+| 3 | Todo app quer seu tempo | verde | https://www.canva.com/d/8wAh6-8YySbugQ1 |
+| 4 | O fim do esforço visível | azul | https://www.canva.com/d/1Ymj_GZmEWqleP5 |
+| 5 | Cansados de novidade | amarelo | https://www.canva.com/d/wwoQ-s0HJAJ742o |
+| 6 | Quem desenhou o seu dia? | rosa | https://www.canva.com/d/YAwj34KUZzqToFl |
+| 7 | A IA que concorda com tudo | vermelho | https://www.canva.com/d/YZpMMZ72v4-ErYA |
 | 8 | O bom design não se nota | azul | https://www.canva.com/d/gBa_Idkvbz1h3Jn |
-| 9 | O que a cadeira de plástico ensina | verde-limão | https://www.canva.com/d/45v7TnuLKq-m5wZ |
-| 10 | A pressa virou interface | musgo | https://www.canva.com/d/fneiWif8xmWcVf1 |
+| 9 | O que a cadeira de plástico ensina | verde | https://www.canva.com/d/45v7TnuLKq-m5wZ |
+| 10 | A pressa virou interface | amarelo | https://www.canva.com/d/fneiWif8xmWcVf1 |
 
 **Ajuste de 1 minuto no Canva:** as páginas internas usam fontes sem serifa
 muito parecidas, mas não idênticas, e a ferramenta automática não consegue
@@ -60,7 +66,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 
 ---
 
-## 1 · A ESTÉTICA DO GENÉRICO · terracota
+## 1 · A ESTÉTICA DO GENÉRICO · vermelho
 1. **A ESTÉTICA DO GENÉRICO** / *por que tudo feito com IA parece igual*
 2. Faz um teste: pede pra três IAs “um café aconchegante”. Aposto que vem luz amarela, madeira, uma planta e fumaça na xícara. Parece que combinaram.
 3. Tem uma explicação simples. A IA gera o resultado mais provável. E o mais provável é a média de tudo o que ela já viu.
@@ -69,7 +75,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Não tô dizendo pra parar de usar IA. Tô dizendo que o trabalho agora começa onde a média termina.
 7. E você, o que no seu trabalho só você faria? · studiodito.co
 
-## 2 · O DESIGNER NÃO VAI ACABAR · azul
+## 2 · O DESIGNER NÃO VAI ACABAR · laranja
 1. **O DESIGNER NÃO VAI ACABAR** / *mas o designer que só executa, talvez*
 2. Toda semana alguém anuncia o fim da profissão. E toda semana alguém precisa decidir o que vale a pena desenhar.
 3. A IA ficou ótima em responder "como". Gera tela, gera logo, gera variação em segundos.
@@ -78,7 +84,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. A parte cara é a que sempre foi o design de verdade: entender gente, fazer a pergunta certa, decidir.
 7. E você, hoje passa mais tempo executando ou decidindo? · studiodito.co
 
-## 3 · TODO APP QUER SEU TEMPO · verde-limão
+## 3 · TODO APP QUER SEU TEMPO · verde
 1. **TODO APP QUER SEU TEMPO** / *e o design é a ferramenta pra isso*
 2. A rolagem que não acaba. O próximo vídeo que começa sozinho. O pontinho vermelho que você precisa tocar.
 3. Nada disso é acidente. São decisões de design, testadas e medidas pra você ficar mais um pouco.
@@ -87,7 +93,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Um bom design também pode te deixar ir embora. Terminar. Fechar o app com a sensação de que acabou.
 7. E você, qual app você abre sem nem perceber? · studiodito.co
 
-## 4 · O FIM DO ESFORÇO VISÍVEL · musgo
+## 4 · O FIM DO ESFORÇO VISÍVEL · azul
 1. **O FIM DO ESFORÇO VISÍVEL** / *quando tudo parece fácil, nada parece valioso*
 2. Durante muito tempo, a gente via o trabalho. O rascunho, a prova de cor, a maquete, as horas.
 3. Hoje um cartaz aparece pronto em segundos. E de repente todo mundo pergunta: "mas isso não é só apertar um botão?"
@@ -96,7 +102,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Talvez o novo trabalho seja esse: contar o processo, porque ninguém mais vai adivinhar que ele existiu.
 7. E você, que parte do seu trabalho ninguém vê? · studiodito.co
 
-## 5 · CANSADOS DE NOVIDADE · lilás
+## 5 · CANSADOS DE NOVIDADE · amarelo
 1. **CANSADOS DE NOVIDADE** / *o hype também tem prazo de validade*
 2. Toda semana sai uma ferramenta que "muda tudo". Na semana seguinte, outra muda tudo de novo.
 3. No começo era empolgante. Agora parece uma esteira: você corre só pra continuar no mesmo lugar.
@@ -105,7 +111,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Tudo bem não testar tudo. Escolher o que ignorar também é uma forma de pensar.
 7. E você, qual novidade você decidiu deixar passar? · studiodito.co
 
-## 6 · QUEM DESENHOU O SEU DIA? · salmão (APROFUNDADO: 10 páginas)
+## 6 · QUEM DESENHOU O SEU DIA? · rosa (APROFUNDADO: 10 páginas)
 1. **QUEM DESENHOU O SEU DIA?** / *nenhum design é neutro*
 2. O despertador que te acordou. O app que você abriu antes de levantar. A ordem em que o feed te mostrou as coisas. **[imagem trocada por você]**
 3. Cada uma dessas coisas foi desenhada por alguém. Quase sempre com uma meta que não é a sua.
@@ -124,7 +130,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 - Doação de órgãos: Johnson, E. e Goldstein, D. "Do Defaults Save Lives?", *Science* 302 (2003). Usei só o padrão geral (consentimento cerca de 5 vezes menor onde é preciso se inscrever), sem percentuais por país, que não consegui conferir.
 - **A conferir antes de postar:** "ele criaria o TED" (Wurman fundou o TED em 1984).
 
-## 7 · A IA QUE CONCORDA COM TUDO · terracota
+## 7 · A IA QUE CONCORDA COM TUDO · vermelho
 1. **A IA QUE CONCORDA COM TUDO** / *elogio demais também é um defeito*
 2. Você manda um texto e ela acha ótimo. Manda uma ideia e ela acha brilhante. Manda o oposto e ela também acha.
 3. Não é acaso. Esses modelos aprendem também com notas que pessoas dão às respostas. E a gente dá nota alta pra quem concorda.
@@ -142,7 +148,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Repara hoje numa coisa que funcionou tão bem que você nem percebeu. Alguém pensou muito pra ela parecer óbvia.
 7. E você, qual objeto do seu dia é tão bem desenhado que ninguém nota? · studiodito.co
 
-## 9 · A CADEIRA QUE NINGUÉM ASSINA · verde-limão (REESCRITO: estilo informativo, 8 páginas)
+## 9 · A CADEIRA QUE NINGUÉM ASSINA · verde (REESCRITO: estilo informativo, 8 páginas)
 1. **A CADEIRA QUE NINGUÉM ASSINA** / *a história da cadeira de plástico monobloco*
 2. Da barraca de praia em Fortaleza ao bar da esquina. O nome dela é monobloco: sai inteira de um molde só, em plástico injetado. **[foto real]**
 3. Repara no próximo bar em que você sentar: a cadeira é quase sempre a mesma. Ela está em todo lugar e, por isso, ninguém mais vê. Mas alguém teve que inventar. **[página nova, para despertar curiosidade]**
@@ -157,7 +163,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 **Corrigido do resumo do Google:** a data "1983" para a Grosfillex e a
 influência de Verner Panton não aparecem nas fontes; ficaram de fora.
 
-## 10 · A PRESSA VIROU INTERFACE · musgo
+## 10 · A PRESSA VIROU INTERFACE · amarelo
 1. **A PRESSA VIROU INTERFACE** / *tudo é feito pra você não parar*
 2. Vídeo em velocidade 2x. Resumo do livro em 5 minutos. Resposta pronta antes de você terminar a pergunta.
 3. A gente desenhou ferramentas pra economizar tempo. E agora usa o tempo economizado pra consumir mais coisa rápida.

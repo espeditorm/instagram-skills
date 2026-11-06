@@ -1,7 +1,7 @@
 # Legendas dos 4 carrosséis aprovados
 
 Ordem sugerida de postagem: os 4 seguidos, um por semana na quinta, trocando
-de cor para a grade ficar variada (limão → azul → terracota → musgo).
+de cor para a grade ficar variada (verde → azul → vermelho → amarelo).
 
 As quatro foram conferidas com `caption.py`. A primeira linha cabe nos 125
 caracteres que aparecem antes do "... mais", e cada uma tem 5 hashtags. O
