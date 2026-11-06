@@ -109,7 +109,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 1. **QUEM DESENHOU O SEU DIA?** / *nenhum design é neutro*
 2. O despertador que te acordou. O app que você abriu antes de levantar. A ordem em que o feed te mostrou as coisas.
 3. Cada uma dessas coisas foi desenhada por alguém. Quase sempre com uma meta que não é a sua.
-4. No design isso tem nome: arquitetura de escolha. Quem decide o que aparece primeiro decide muito do que você escolhe.
+4. No design isso tem nome: arquitetura de informação. Quem decide o que aparece primeiro decide muito do que você escolhe.
 5. O termo vem do livro *Nudge*, de Thaler e Sunstein. Essa é a minha leitura; vale ler o original.
 6. Não é que todo design seja manipulação. É que nenhum design é neutro. Alguém sempre escolheu por você.
 7. E você, qual escolha do seu dia não foi sua? · studiodito.co
@@ -162,7 +162,7 @@ influência de Verner Panton não aparecem nas fontes; ficaram de fora.
 - **Rolagem infinita / Aza Raskin (#3):** Raskin criou a rolagem infinita em
   2006 e, em entrevistas a partir de 2018, disse se arrepender do uso que ela
   ganhou. Se quiser, cite a fonte na legenda.
-- **Arquitetura de escolha (#6):** termo de Thaler e Sunstein, *Nudge* (2008).
+- **Arquitetura da informação (#6):** termo atribuído a Richard Saul Wurman, tema da conferência do American Institute of Architects de 1976.
 - **Bajulação/sycophancy (#7):** fenômeno documentado em artigos de
   laboratórios de IA desde 2023. Não cite números sem ter a fonte.
 - **Cadeira de plástico (#9):** as frases foram escritas para não depender de
