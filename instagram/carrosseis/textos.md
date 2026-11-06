@@ -112,7 +112,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 4. No design isso tem nome: arquitetura de informação. Quem decide o que aparece primeiro decide muito do que você escolhe.
 5. O termo surgiu em 1976, quando o arquiteto Richard Saul Wurman escolheu "a arquitetura da informação" como tema de um congresso de arquitetos nos EUA. Anos depois, ele criaria o TED.
 6. Em 1989, Wurman escreveu que só existem 5 jeitos de organizar informação: por lugar, alfabeto, tempo, categoria ou hierarquia. Pensa num mapa, num dicionário, numa linha do tempo, num cardápio e num ranking.
-7. Um exemplo que você usa todo dia: em 2016, o Instagram trocou o feed por ordem de tempo por um feed ordenado por algoritmo. Os posts continuaram os mesmos. Só mudou a ordem, e com ela o que você vê primeiro.
+7. Em 2016, o Instagram trocou o feed em ordem de tempo por um feed ordenado por algoritmo. Os posts eram os mesmos. Só mudou a ordem. **[imagem: celular com fotos se reorganizando no ar]**
 8. Pesa até em decisões sérias. Um estudo de 2003, na revista Science, comparou países europeus: onde a pessoa já é doadora de órgãos por padrão, quase todos aceitam. Onde precisa se inscrever, o número cai muito.
 9. Não é que todo design seja manipulação. É que nenhum design é neutro. Alguém sempre escolheu por você.
 10. E você, qual escolha do seu dia não foi sua? · studiodito.co
