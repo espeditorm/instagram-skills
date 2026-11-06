@@ -62,7 +62,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 
 ## 1 · A ESTÉTICA DO GENÉRICO · terracota
 1. **A ESTÉTICA DO GENÉRICO** / *por que tudo feito com IA parece igual*
-2. Você já reparou? Abre o feed e tudo tem a mesma luz, a mesma pele lisa, o mesmo céu de fim de tarde. Bonito. E esquecível.
+2. Faz um teste: pede pra três IAs “um café aconchegante”. Aposto que vem luz amarela, madeira, uma planta e fumaça na xícara. Parece que combinaram.
 3. Tem uma explicação simples. A IA gera o resultado mais provável. E o mais provável é a média de tudo o que ela já viu.
 4. A média é agradável justamente porque não incomoda ninguém. Não tem erro, não tem sotaque, não tem escolha.
 5. Só que estilo é isso: uma escolha que alguém fez e que poderia ter sido outra. Quando ninguém escolhe, sobra o genérico.
