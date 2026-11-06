@@ -105,16 +105,24 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Tudo bem não testar tudo. Escolher o que ignorar também é uma forma de pensar.
 7. E você, qual novidade você decidiu deixar passar? · studiodito.co
 
-## 6 · QUEM DESENHOU O SEU DIA? · salmão
+## 6 · QUEM DESENHOU O SEU DIA? · salmão (APROFUNDADO: 10 páginas)
 1. **QUEM DESENHOU O SEU DIA?** / *nenhum design é neutro*
-2. O despertador que te acordou. O app que você abriu antes de levantar. A ordem em que o feed te mostrou as coisas.
+2. O despertador que te acordou. O app que você abriu antes de levantar. A ordem em que o feed te mostrou as coisas. **[imagem trocada por você]**
 3. Cada uma dessas coisas foi desenhada por alguém. Quase sempre com uma meta que não é a sua.
 4. No design isso tem nome: arquitetura de informação. Quem decide o que aparece primeiro decide muito do que você escolhe.
-5. O termo surgiu em 1976, quando o arquiteto Richard Saul Wurman escolheu “a arquitetura da informação” como tema de um congresso de arquitetos nos EUA. Anos depois, ele criaria o TED.
+5. O termo surgiu em 1976, quando o arquiteto Richard Saul Wurman escolheu "a arquitetura da informação" como tema de um congresso de arquitetos nos EUA. Anos depois, ele criaria o TED.
+6. Em 1989, Wurman escreveu que só existem 5 jeitos de organizar informação: por lugar, alfabeto, tempo, categoria ou hierarquia. Pensa num mapa, num dicionário, numa linha do tempo, num cardápio e num ranking.
+7. Um exemplo que você usa todo dia: em 2016, o Instagram trocou o feed por ordem de tempo por um feed ordenado por algoritmo. Os posts continuaram os mesmos. Só mudou a ordem, e com ela o que você vê primeiro.
+8. Pesa até em decisões sérias. Um estudo de 2003, na revista Science, comparou países europeus: onde a pessoa já é doadora de órgãos por padrão, quase todos aceitam. Onde precisa se inscrever, o número cai muito.
+9. Não é que todo design seja manipulação. É que nenhum design é neutro. Alguém sempre escolheu por você.
+10. E você, qual escolha do seu dia não foi sua? · studiodito.co
 
-**Fontes:** Wikipedia, "Richard Saul Wurman"; Journal of Information Architecture, vol. 3, n. 2.
-6. Não é que todo design seja manipulação. É que nenhum design é neutro. Alguém sempre escolheu por você.
-7. E você, qual escolha do seu dia não foi sua? · studiodito.co
+**Fontes (para a legenda):**
+- Arquitetura da informação, 1976: Wikipedia, "Richard Saul Wurman"; Journal of Information Architecture, vol. 3, n. 2.
+- Os 5 jeitos de organizar (LATCH / "Five Hat Racks"): Richard Saul Wurman, *Information Anxiety* (1989).
+- Feed do Instagram, 2016: anúncio do Instagram de março de 2016, noticiado na época (ex.: Tubefilter, 16/03/2016).
+- Doação de órgãos: Johnson, E. e Goldstein, D. "Do Defaults Save Lives?", *Science* 302 (2003). Usei só o padrão geral (consentimento cerca de 5 vezes menor onde é preciso se inscrever), sem percentuais por país, que não consegui conferir.
+- **A conferir antes de postar:** "ele criaria o TED" (Wurman fundou o TED em 1984).
 
 ## 7 · A IA QUE CONCORDA COM TUDO · terracota
 1. **A IA QUE CONCORDA COM TUDO** / *elogio demais também é um defeito*
