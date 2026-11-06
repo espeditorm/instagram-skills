@@ -11,7 +11,7 @@ chamadas em inglês, e todas têm uma em português.
 ## 1 · A cadeira que ninguém assina
 
 ```
-Ela está em quase toda barraca de praia de Fortaleza, e quase ninguém sabe quem desenhou. A resposta é: muita gente.
+Ela está em quase toda barraca de praia de Fortaleza, e pouca gente sabe quem desenhou. A resposta é: muita gente.
 
 A cadeira de plástico monobloco é injetada numa peça só, em polipropileno. Por isso é leve, empilha e custa pouco.
 
