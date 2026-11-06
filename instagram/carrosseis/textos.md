@@ -110,7 +110,9 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 2. O despertador que te acordou. O app que você abriu antes de levantar. A ordem em que o feed te mostrou as coisas.
 3. Cada uma dessas coisas foi desenhada por alguém. Quase sempre com uma meta que não é a sua.
 4. No design isso tem nome: arquitetura de informação. Quem decide o que aparece primeiro decide muito do que você escolhe.
-5. O termo vem do livro *Nudge*, de Thaler e Sunstein. Essa é a minha leitura; vale ler o original.
+5. O termo surgiu em 1976, quando o arquiteto Richard Saul Wurman escolheu “a arquitetura da informação” como tema de um congresso de arquitetos nos EUA. Anos depois, ele criaria o TED.
+
+**Fontes:** Wikipedia, "Richard Saul Wurman"; Journal of Information Architecture, vol. 3, n. 2.
 6. Não é que todo design seja manipulação. É que nenhum design é neutro. Alguém sempre escolheu por você.
 7. E você, qual escolha do seu dia não foi sua? · studiodito.co
 
