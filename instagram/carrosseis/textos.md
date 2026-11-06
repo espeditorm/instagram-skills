@@ -18,7 +18,7 @@ O estilo vem das referências de 06/11; não copia nenhum post delas.
 - **Numeração:** "02/07" no canto inferior direito, igual em todas as páginas.
 - **Fonte:** uma família só, sem serifa: Archivo, ou Inter como alternativa.
   Bold nos títulos, regular no texto.
-- **Paleta (atualizada em 06/11/2026):** 7 cores. As capas e a última página
+- **Paleta (atualizada em 06/11/2026):** 6 cores. As capas e a última página
   usam uma cor por post; as páginas internas são todas creme, o que deixa a
   grade unida mesmo com capas de cores diferentes.
 
@@ -30,7 +30,6 @@ O estilo vem das referências de 06/11; não copia nenhum post delas.
 | Azul | #669BBC | tinta #1E1E1C | 5,5:1 | capa |
 | Rosa | #FF006E | tinta #1E1E1C | 4,4:1 | capa (só título grande) |
 | Amarelo | #FFBE0B | tinta #1E1E1C | 10,0:1 | capa |
-| Laranja | #FB5607 | tinta #1E1E1C | 5,1:1 | capa |
 
 O rosa fica um pouco abaixo de 4,5:1: funciona no título grande da capa, mas
 evite texto pequeno em cima dele.
@@ -49,7 +48,7 @@ puder, principalmente no carrossel 9 (as cadeiras da praia).
 | # | Carrossel | Cor | Editar |
 |---|---|---|---|
 | 1 | A estética do genérico | vermelho | https://www.canva.com/d/PFZbguV76HMKdSv |
-| 2 | O designer não vai acabar | laranja | https://www.canva.com/d/soR5PSNoqOOofrU |
+| 2 | O designer não vai acabar | rosa | https://www.canva.com/d/soR5PSNoqOOofrU |
 | 3 | Todo app quer seu tempo | verde | https://www.canva.com/d/8wAh6-8YySbugQ1 |
 | 4 | O fim do esforço visível | azul | https://www.canva.com/d/1Ymj_GZmEWqleP5 |
 | 5 | Cansados de novidade | amarelo | https://www.canva.com/d/wwoQ-s0HJAJ742o |
@@ -75,7 +74,7 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Não tô dizendo pra parar de usar IA. Tô dizendo que o trabalho agora começa onde a média termina.
 7. E você, o que no seu trabalho só você faria? · studiodito.co
 
-## 2 · O DESIGNER NÃO VAI ACABAR · laranja
+## 2 · O DESIGNER NÃO VAI ACABAR · rosa
 1. **O DESIGNER NÃO VAI ACABAR** / *mas o designer que só executa, talvez*
 2. Toda semana alguém anuncia o fim da profissão. E toda semana alguém precisa decidir o que vale a pena desenhar.
 3. A IA ficou ótima em responder "como". Gera tela, gera logo, gera variação em segundos.
