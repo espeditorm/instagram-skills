@@ -1,67 +1,87 @@
 # voice.md
 
-Copy this to `~/.claude/instagram/voice.md` and fill it in. Every skill in the
-pack reads it. Ten minutes here is the difference between scripts you shoot and
-scripts you rewrite.
-
-If you would rather not fill it in by hand, send Claude three of your own reels
-or captions and say "write my voice.md from these". That works better than
-guessing at the answers.
-
-This file matters more on Instagram than anywhere else, because you have to say
-the words out loud. A line you would never say is not a draft, it is a retake.
+Perfil de voz do @espeditoroza. Todas as skills `ig-*` leem este arquivo.
+Montado a partir de `instagram/contexto.md` (06/11/2026). Os campos marcados
+com **[FALTA]** precisam de você: não dá para inventar.
 
 ---
 
-## Who I am
+## Quem sou
 
-- **Name:**
-- **Handle:**
-- **What I do, in one sentence:**
-- **Who I am talking to:** (be specific: "photographers charging under $2,000",
-  not "creatives")
-- **What I sell:**
+- **Nome:** Espedito Roza
+- **Handle:** @espeditoroza
+- **O que faço, numa frase:** sou designer em Fortaleza e penso o que a
+  tecnologia, principalmente a IA, faz com as pessoas, com a cultura e com a
+  profissão.
+- **Com quem falo:** gente curiosa sobre IA que está cansada de lista de
+  ferramenta e hype. Em especial designers, estudantes de design e
+  criativos que querem usar IA sem perder o olhar próprio.
+  **[FALTA: confirmar ou afinar. Ex.: "estudantes e designers júnior do Nordeste"]**
+- **O que vendo:** nada por enquanto. No futuro, um curso de design. O
+  conteúdo de agora constrói autoridade em design, sem CTA de venda.
 
-## What I sound like
+## Como eu soo
 
-- **Three of my own reels or captions that sound most like me:** (paste them)
-- **On camera I am:** (fast and loud / dry / calm / funny / deadpan)
-- **Words I actually use:**
-- **Words I would never say out loud:**
-- **Do I swear:** (yes / mild / no)
-- **Emoji in captions:** (never / one, rarely / freely)
-- **Face on camera:** (always / sometimes / faceless)
-- **Voiceover or to-camera:**
-- **Pace:** (words per minute, if you have timed yourself reading a script.
-  `beats.py --wpm` uses this. Most people are between 150 and 200.)
+- **Posicionamento:** o designer que pensa a IA, em vez de só vender a IA.
+- **Tom:** reflexivo, provocador e acessível. Nunca arrogante, nunca
+  catastrofista.
+- **Na câmera eu sou:** calmo, de conversa, falando direto com a câmera.
+  **[FALTA: confirmar]**
+- **Movimento típico:** sai de algo banal do dia a dia (um app, um objeto, um
+  hábito, uma cena de Fortaleza) e chega numa ideia grande.
+- **Referências:** autores e casos de design explicados com as minhas
+  palavras, dizendo que é a minha leitura.
+- **Antes de provocar:** aviso ("não tô dizendo que todo mundo...").
+- **Fecho:** devolvo a pergunta pro público ("e você, ...?").
+- **Três legendas ou roteiros meus que mais soam como eu:**
+  **[FALTA: colar 3. É o que mais melhora os roteiros.]**
+- **Palavras que eu uso:** **[FALTA]**
+- **Palavras que eu nunca diria:** "hack", "segredo que ninguém te conta",
+  "a IA vai substituir você", "corre que dá tempo", "10 ferramentas que...".
+  **[FALTA: completar]**
+- **Palavrão:** **[FALTA: sim / leve / não]**
+- **Emoji nas legendas:** **[FALTA: nunca / pouco / à vontade]**
+- **Rosto na câmera:** sempre nos Reels.
+- **Narração ou falando pra câmera:** falando pra câmera.
+- **Ritmo:** **[FALTA: cronometre a leitura de um roteiro. Padrão usado
+  enquanto isso: 160 palavras por minuto.]**
 
-## My positions
+## Minhas posições
 
-Three to five things I believe that some of my audience does not. These are
-where the good reels come from.
+Coisas em que eu acredito e que parte do público não concorda. É daqui que
+saem os melhores Reels. Rascunho a partir do contexto, **ajuste e assine**:
 
-1.
-2.
-3.
+1. O designer não vai acabar, mas o designer que só executa, talvez.
+2. Tudo que é feito com IA tende a parecer igual, e isso é um problema de
+   design, não de ferramenta.
+3. Boa parte dos apps é desenhada para tomar o seu tempo, e o design é
+   cúmplice disso.
+4. O hype também tem prazo de validade: a novidade cansa.
+5. Esforço invisível desvaloriza o trabalho. Quando tudo parece fácil, nada
+   parece valioso.
 
-## Off limits
+## Fora dos limites
 
-- **Topics I do not post about:**
-- **Clients, numbers or names I cannot say publicly:**
-- **Claims I am not allowed to make:** (regulated industry, employer policy, NDA)
+- **Assuntos que não posto:** venda de curso (por enquanto); listas de
+  ferramentas sem reflexão. **[FALTA: completar]**
+- **Clientes, números ou nomes que não posso citar:** **[FALTA]**
+- **Afirmações que não posso fazer:** **[FALTA: algo de empregador,
+  universidade, NDA?]**
 
-## Proof I can use
+## Provas que posso usar
 
-Real numbers, outcomes and stories I am happy to put my name on. The skills will
-never invent one, so if this section is empty, every draft comes back with
-`{{your number}}` in it.
+Números, resultados e histórias reais que eu assino. As skills nunca inventam
+nada disso: sem esta seção, todo roteiro volta com `{{sua vivência}}`.
 
--
--
--
+- Designer baseado em Fortaleza, com repertório de cultura, festas, design e
+  arte da cidade.
+- Dá palestras e participa de eventos. **[FALTA: quais, quando, para quantas pessoas]**
+- **[FALTA: projetos de design que você pode mostrar, cursos que já deu,
+  alunos, prêmios, casos em que usou IA de verdade no processo]**
 
-## The ask
+## O pedido (CTA)
 
-- **My keyword CTA, if I use one:** (one word, sayable, no spaces)
-- **What the keyword sends them:**
-- **Where my link goes:**
+- **Padrão agora:** devolver a pergunta e pedir comentário. Sem palavra-chave
+  e sem link de venda nesta fase.
+- **Palavra-chave de DM:** nenhuma por enquanto.
+- **Para onde o link vai:** **[FALTA]**
