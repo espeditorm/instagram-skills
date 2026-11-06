@@ -24,7 +24,7 @@ O estilo vem das referências de 06/11; não copia nenhum post delas.
 
 | Cor | Hex | Texto em cima | Contraste | Uso |
 |---|---|---|---|---|
-| Verde | #A7C957 | tinta #1E1E1C | 8,9:1 | capa |
+| Verde | #386641 | creme #FDF0D5 | 5,9:1 | capa |
 | Vermelho | #C1121F | creme #FDF0D5 | 5,5:1 | capa |
 | Creme | #FDF0D5 | tinta #1E1E1C | alto | todas as páginas internas |
 | Azul | #669BBC | tinta #1E1E1C | 5,5:1 | capa |
