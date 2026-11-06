@@ -1,60 +1,77 @@
-# Plano: 4 primeiras semanas (09/11 a 06/12/2026)
+# Plano: 4 primeiras semanas (09/11 a 06/12/2026) · @espeditoroza
 
-Feito com o `/ig-plan`, adaptado ao contexto: 3 posts por semana, 4 pilares,
-nada de venda. Os tipos "Prova" e "Oferta" da skill original ficam de fora
-nesta fase.
+Para chegar a 10 mil seguidores em 3 meses: **5 posts por semana** (4 Reels e 1
+carrossel ou foto), em duas séries fixas. O porquê está em
+`estrategia-10k.md`. Nada de venda nesta fase.
 
-**Horário:** 19h (Fortaleza). Mas o horário importa muito menos que os 2
-primeiros segundos. Não perca tempo otimizando hora antes de os ganchos
-funcionarem.
+**Horário:** 19h (Fortaleza). O horário importa muito menos que os 2 primeiros
+segundos do Reel.
 
-**Dias fixos:** terça, quinta e domingo.
+| Dia | Formato | O que entra |
+|---|---|---|
+| Seg | REEL | Série **Quem desenhou isso?** (Design, autoridade) |
+| Ter | REEL | Mini-ensaio (IA e sociedade, alcance) |
+| Qui | CARROSSEL ou FOTO | Alterna capa de ideia com post "Eu" |
+| Sex | REEL | Série **IA sem hype** (IA no processo, salvamentos) |
+| Dom | REEL | Mini-ensaio (alcance) |
 
-**Proporção no feed:** a cada 3 posts, 2 têm capa de ideia (título editorial
-ou capa colorida) e 1 mostra você (foto, palco, bastidor). Os Reels mostram o
-seu rosto, mas a capa deles é o título.
+## Semana 1 (09/11)
+- **Seg** · Quem desenhou isso? #1 · *Quem* desenhou *o seu dia hoje?* (roteiro pronto, abre a série)
+- **Ter** · Ensaio · *E se a IA for* gentil *demais?* (roteiro pronto)
+- **Qui** · Carrossel · A ESTÉTICA DO GENÉRICO / *por que tudo feito com IA parece igual*
+- **Sex** · IA sem hype #1 · *Por que tudo anda* tão bonito *e tão vazio?* (roteiro pronto)
+- **Dom** · Ensaio · *Você já sentiu* saudade *de algo que nem era real?*
 
-| | Ter 19h | Qui 19h | Dom 19h |
-|---|---|---|---|
-| **Sem 1** (09/11) | REEL · Design · *Quem desenhou o seu dia hoje?* (pronto) | CARROSSEL · IA e sociedade · A ESTÉTICA DO GENÉRICO / *por que tudo feito com IA parece igual* | REEL · IA e sociedade · *E se a IA for gentil demais?* (pronto) |
-| **Sem 2** (16/11) | REEL · IA no processo · *Tão bonito e tão vazio* (pronto) | FOTO · Eu · quem eu sou e por que vou falar disso aqui (post de apresentação do novo posicionamento) | CARROSSEL · Design · TODO APP QUER SEU TEMPO / *e o design é a ferramenta pra isso* |
-| **Sem 3** (23/11) | REEL · Design · *Quem desenhou* um objeto de Fortaleza? (ex.: a cadeira de plástico da barraca de praia, o leque, a placa pintada à mão) | CARROSSEL · Opinião · O DESIGNER NÃO VAI ACABAR / *mas o designer que só executa, talvez* | REEL · IA e sociedade · *Você já sentiu* saudade *de algo que nem era real?* |
-| **Sem 4** (30/11) | REEL · IA no processo · Como eu uso IA num projeto real, do briefing à entrega (mostrando a tela) | FOTO · Eu · palestra ou evento, com um aprendizado na legenda | REEL · Comportamento · *A última coisa que você fez* sem pressa |
+## Semana 2 (16/11)
+- **Seg** · Quem desenhou isso? #2 · A cadeira de plástico da barraca de praia
+- **Ter** · Ensaio · *A última coisa que você fez* sem pressa
+- **Qui** · Foto · Eu · Apresentação: quem sou e por que falo de design e IA (vai para os fixados)
+- **Sex** · IA sem hype #2 · Um projeto real do briefing à entrega: onde a IA ajudou e onde atrapalhou
+- **Dom** · Ensaio · *Por que a* novidade *cansa tão rápido?*
 
-Reservas, para trocar se algo da semana render mais: CANSADOS DE NOVIDADE
-(carrossel), O FIM DO ESFORÇO VISÍVEL (carrossel), *Por que tudo anda tão
-bonito e tão vazio?* (versão em carrossel do Reel 3).
+## Semana 3 (23/11)
+- **Seg** · Quem desenhou isso? #3 · A tela "tem certeza que quer cancelar?"
+- **Ter** · Ensaio · *Se tudo parece* fácil, *o que ainda vale?* (o fim do esforço visível)
+- **Qui** · Carrossel · O DESIGNER NÃO VAI ACABAR / *mas o designer que só executa, talvez* (manifesto, vai para os fixados)
+- **Sex** · IA sem hype #3 · Por que a IA ainda erra tipografia + **"comenta FONTES"** (material grátis)
+- **Dom** · Ensaio · *Quem é o* autor *quando a IA desenha?*
 
-**Regra de troca:** se acontecer algo real na semana (uma conversa, um projeto,
-uma notícia de IA), isso tem prioridade sobre o calendário. Um ângulo real
-vale mais que um tema planejado.
+## Semana 4 (30/11)
+- **Seg** · Quem desenhou isso? #4 · O cardápio por QR code
+- **Ter** · Ensaio · *Por que todo app quer ser seu* amigo?
+- **Qui** · Foto · Eu · Palestra ou aula, com um aprendizado na legenda
+- **Sex** · IA sem hype #4 · O comando que eu uso para a IA criticar meu layout (continua o Reel "gentil demais")
+- **Dom** · **Collab** · Ensaio em coautoria com um parceiro (escolher até 23/11 e convidar com `/ig-dm`)
+
+**Reservas:** TODO APP QUER SEU TEMPO (carrossel), CANSADOS DE NOVIDADE
+(carrossel), versão em carrossel do Reel que mais render.
+
+**Regra de troca:** se acontecer algo real na semana (uma aula, um projeto, uma
+notícia de IA), isso passa na frente do calendário. Um ângulo real vale mais
+que um tema planejado.
 
 ## Stories, todos os dias
+3 a 5 telas: bastidor da gravação, enquete puxando o tema do Reel do dia e
+caixa de perguntas às quintas. As respostas viram pauta.
 
-3 a 5 telas: bastidor da gravação, uma pergunta do Reel do dia e uma caixa de
-perguntas às quintas. O público responde nas stories, e daí sai pauta.
+## Engajamento: 20 min por dia, antes de postar
+Monte uma lista de 10 contas (não sugeri nomes para não inventar perfis):
+- **5 de alcance:** perfis grandes de design, tecnologia ou cultura com o
+  público que você quer. Comente cedo.
+- **3 pares:** do seu porte, em design ou IA, de preferência do Nordeste. São
+  os candidatos a collab.
+- **2 futuros alunos:** estudantes ou designers em início de carreira.
 
-## Rodada de engajamento: 20 min por dia, antes de postar
+Depois, rode `/ig-comment` com a lista. Comentar é sempre manual.
 
-Lista de 10 contas, que você monta. Eu não sugeri nomes para não inventar
-perfis:
-
-- **5 de alcance:** perfis maiores de design, tecnologia ou cultura com o
-  público que você quer. Comente cedo, antes de a conversa passar de 200
-  comentários.
-- **3 pares:** criadores do seu tamanho (2 mil a 15 mil seguidores) em design
-  ou IA, de preferência do Nordeste. É o grupo que retribui.
-- **2 futuros alunos:** estudantes ou designers em início de carreira que
-  comentam sobre carreira e IA. Só converse por semanas, sem vender nada.
-
-Quando tiver a lista, rode `/ig-comment` com ela. Comentar é manual, sempre.
-
-## Fora do calendário (tarefas do contexto)
-
-- [ ] Limpeza de quem não segue de volta: 100 a 150 por dia, manualmente.
-  No ritmo de 150, os 1.590 levam cerca de 11 dias.
-- [ ] `/ig-profile`: revisar bio, nome e destaques. Preciso da bio atual e dos
-  nomes dos destaques.
-- [ ] Definir a paleta de fundos (5 ou 6 cores) e a cor-assinatura antes do
-  carrossel de quinta, 12/11.
-- [ ] Modelos no Canva: capa de carrossel, capa de Reel e post "artístico".
+## Tarefas fora do calendário (até domingo, 08/11)
+- [ ] Aplicar o novo perfil (`perfil.md`): campo de nome, bio, link e destaques.
+- [ ] Arquivar o post do webinar de dez/2025 na @studiodito.co e pôr na bio
+  dela "conteúdo diário em @espeditoroza".
+- [ ] Definir a paleta de fundos e a cor-assinatura (o primeiro carrossel é
+  quinta, 12/11).
+- [ ] Modelos no Canva: capa de carrossel, título editorial do Reel e logo das
+  2 séries.
+- [ ] Preencher as vivências dos 3 roteiros prontos e gravar os 3 no domingo.
+- [ ] Anunciar a conta para as suas turmas da UFC e da The Starter.
+- [ ] Continuar a limpeza de quem não segue de volta (100 a 150 por dia).

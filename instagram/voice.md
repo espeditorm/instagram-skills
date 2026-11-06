@@ -75,6 +75,16 @@ nada disso: sem esta seção, todo roteiro volta com `{{sua vivência}}`.
 
 - Designer baseado em Fortaleza, com repertório de cultura, festas, design e
   arte da cidade.
+- Há 7 anos cria sistemas, apps e sites para clientes do Brasil, de Portugal e
+  dos EUA. Product Designer e Business Analyst sênior.
+- Professor de UX/UI na The Starter (curso completo para iniciantes, 3 meses,
+  online e ao vivo).
+- Professor de IA na UFC (curso "IA em Imagem e Texto").
+- Deu o webinar "Engenharia de prompt para designers" (17/12/2025).
+- Tem o material "Fontes para projetos de design" (bom para oferecer de graça
+  por palavra-chave).
+- Também tem a conta @studiodito.co (Studio Dito, Design de Produtos), que
+  fica reservada para o curso.
 - Dá palestras e participa de eventos. **[FALTA: quais, quando, para quantas pessoas]**
 - **[FALTA: projetos de design que você pode mostrar, cursos que já deu,
   alunos, prêmios, casos em que usou IA de verdade no processo]**
@@ -83,5 +93,6 @@ nada disso: sem esta seção, todo roteiro volta com `{{sua vivência}}`.
 
 - **Padrão agora:** devolver a pergunta e pedir comentário. Sem palavra-chave
   e sem link de venda nesta fase.
-- **Palavra-chave de DM:** nenhuma por enquanto.
+- **Palavra-chave de DM:** FONTES, que envia o material "Fontes para projetos
+  de design". Resposta manual no começo.
 - **Para onde o link vai:** **[FALTA]**
