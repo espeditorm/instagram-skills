@@ -91,8 +91,8 @@ nada disso: sem esta seção, todo roteiro volta com `{{sua vivência}}`.
 
 ## O pedido (CTA)
 
-- **Padrão agora:** devolver a pergunta e pedir comentário. Sem palavra-chave
-  e sem link de venda nesta fase.
+- **Padrão agora:** devolver a pergunta e pedir comentário. Sem link de venda;
+  palavra-chave só no Reel que oferece material grátis.
 - **Palavra-chave de DM:** FONTES, que envia o material "Fontes para projetos
   de design". Resposta manual no começo.
 - **Para onde o link vai:** **[FALTA]**
