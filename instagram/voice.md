@@ -1,6 +1,7 @@
 # voice.md
 
-Perfil de voz do @espeditoroza. Todas as skills `ig-*` leem este arquivo.
+Perfil de voz da @studiodito.co (conta de crescimento; o rosto e a voz são
+do Espedito Roza, o Dito). Todas as skills `ig-*` leem este arquivo.
 Montado a partir de `instagram/contexto.md` (06/11/2026). Os campos marcados
 com **[FALTA]** precisam de você: não dá para inventar.
 
@@ -9,7 +10,8 @@ com **[FALTA]** precisam de você: não dá para inventar.
 ## Quem sou
 
 - **Nome:** Espedito Roza
-- **Handle:** @espeditoroza
+- **Handle:** @studiodito.co (conteúdo). A @espeditoroza é a conta pessoal:
+  fotos, Fortaleza, palestras e poucos Reels ensinando.
 - **O que faço, numa frase:** sou designer em Fortaleza e penso o que a
   tecnologia, principalmente a IA, faz com as pessoas, com a cultura e com a
   profissão.
@@ -83,8 +85,8 @@ nada disso: sem esta seção, todo roteiro volta com `{{sua vivência}}`.
 - Deu o webinar "Engenharia de prompt para designers" (17/12/2025).
 - Tem o material "Fontes para projetos de design" (bom para oferecer de graça
   por palavra-chave).
-- Também tem a conta @studiodito.co (Studio Dito, Design de Produtos), que
-  fica reservada para o curso.
+- Na @espeditoroza, conta pessoal, tem ~4.570 seguidores: ponte de audiência
+  para a @studiodito.co (stories e collab).
 - Dá palestras e participa de eventos. **[FALTA: quais, quando, para quantas pessoas]**
 - **[FALTA: projetos de design que você pode mostrar, cursos que já deu,
   alunos, prêmios, casos em que usou IA de verdade no processo]**

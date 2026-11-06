@@ -1,134 +1,131 @@
-# Meta: 10 mil seguidores em 3 meses (09/11/2026 a 07/02/2027)
+# Meta: 10 mil seguidores na @studiodito.co em 3 meses (09/11/2026 a 07/02/2027)
 
-## 1. Uma conta só: @espeditoroza
+## 1. O papel de cada conta
 
-Hoje existem duas contas:
-
-| | @espeditoroza | @studiodito.co |
+| | @studiodito.co | @espeditoroza |
 |---|---|---|
-| Seguidores | ~4.570 | 9 |
-| Faltam para 10 mil | ~5.430 (≈ 60 por dia) | ~9.990 (≈ 110 por dia) |
-| Rosto e nome | seus | de estúdio |
+| Papel | **Conta que cresce.** Design e IA, as 2 séries, futuramente o curso | **Pessoal.** Fotos suas, Fortaleza, palestras, de vez em quando um Reel ensinando |
+| Hoje | 9 seguidores, 3 posts | ~4.570 seguidores |
+| Ritmo | 5 posts por semana | 1 a 2 fotos por semana; 1 Reel ensinando a cada 2 semanas |
+| Rosto | Sim. Você aparece nos Reels: pessoas seguem pessoas, mesmo num perfil de estúdio | Sim |
 
-**Decisão: todo o crescimento vai para a @espeditoroza.**
+**A @espeditoroza é a sua maior vantagem.** São 4.570 pessoas que já te
+conhecem. Elas não vão migrar sozinhas, então use a conta pessoal como ponte,
+sem transformar o feed dela:
 
-- **Ponto de partida:** ela começa com quase metade do caminho feito.
-- **Posicionamento:** "o designer que pensa a IA" é uma voz pessoal, e as pessoas
-  seguem pessoas mais rápido do que seguem estúdios.
-- **Foco:** dividir 4 ou 5 posts por semana entre duas contas faria as duas
-  crescerem pela metade.
+- **Stories:** todo post novo da @studiodito.co é repostado nos stories da
+  @espeditoroza. Story não mexe no feed.
+- **Collab:** 1 post por semana (o melhor da semana) sai em coautoria entre
+  as duas contas. Collab é o recurso do Instagram em que um post aparece nos
+  dois perfis e para as duas audiências. Como os Reels ensinando já cabem na
+  @espeditoroza de vez em quando, isso se encaixa no plano dela.
+- **Anúncio da mudança na semana 1:** uma foto sua na @espeditoroza com a
+  legenda "o conteúdo de design e IA agora mora em @studiodito.co", mais
+  stories com link para o perfil.
+- **Bio da @espeditoroza:** uma linha só, "design e IA em @studiodito.co".
 
-A @studiodito.co fica parada e vira a casa do curso quando ele existir. Até lá,
-duas ações:
+## 2. A conta, sendo honesto
 
-- Arquivar o post do webinar de dez/2025, que já passou e faz a conta parecer
-  abandonada.
-- Pôr na bio dela: "conteúdo diário em @espeditoroza".
+Sair de 9 para 10 mil em 13 semanas dá cerca de **110 seguidores por dia**.
+Conta nova raramente faz isso. A meta só fecha se:
 
-Se você preferir crescer a @studiodito.co, o plano abaixo continua valendo,
-mas a meta fica cerca de 2 vezes mais difícil.
+1. **A ponte trouxer de 500 a 1.000 seguidores no primeiro mês**, vindos da
+   @espeditoroza, dos seus alunos e das palestras. Isso também dá ao Instagram
+   os primeiros sinais de interação.
+2. **De 3 a 5 Reels passarem de 200 a 500 mil visualizações** entre as semanas
+   4 e 13. Um Reel assim costuma trazer de mil a 3 mil seguidores de uma vez.
 
-## 2. Por que dá para chegar, e o risco
+Ninguém controla o item 2. O que dá para controlar é a quantidade de
+tentativas (cerca de 50 Reels no período), a qualidade dos ganchos e um perfil
+que converta a visita em seguidor. Por isso há metas por etapa (seção 8): se
+ficar muito abaixo, mudamos o formato em vez de insistir.
 
-Ganhar 5.400 seguidores em 13 semanas não sai do crescimento lento e
-constante. Nesse ritmo, 3 posts por semana dariam umas centenas de seguidores.
-**A meta só fecha se 2 ou 3 Reels passarem de 200 a 500 mil visualizações.**
-Um Reel assim costuma trazer de mil a 3 mil seguidores de uma vez, quando o
-perfil converte bem a visita.
+## 3. Arrumar a casa antes (até 08/11)
 
-Ninguém controla qual Reel estoura. O que dá para controlar é:
+- **Arquivar** (não apagar) o post do webinar de dez/2025 e o do curso UX/UI.
+  Um perfil que abre com dois anúncios de coisas que já passaram parece
+  abandonado e vendedor. O curso volta quando for a hora.
+- **Manter** o carrossel "Fontes para projetos de design": é o seu material
+  grátis (ver 5.3).
+- **@:** veja se `@studiodito` (sem o ".co") está livre. O ".co" é difícil de
+  falar em voz alta numa palestra ou num Reel. Se estiver ocupado, mantenha o
+  atual e use sempre a mesma forma escrita.
+- Aplicar o perfil novo (`perfil.md`).
 
-1. **Quantidade de tentativas.** Passar de 3 para **5 posts por semana (4 Reels
-   e 1 carrossel)**. Isso dá cerca de 50 Reels em 13 semanas, em vez de 25.
-2. **Gancho.** Os 2 primeiros segundos decidem se o Reel chega a quem não te
-   segue.
-3. **Perfil que converte.** Quem chega por um Reel decide em 3 segundos se
-   segue (ver `perfil.md`). Hoje ele perde essa pessoa.
+## 4. Séries fixas
 
-Nem eu nem ninguém garante 10 mil. Por isso há metas por etapa, na seção 7:
-se a semana 6 vier muito abaixo, mudamos o formato em vez de insistir.
-
-## 3. Séries fixas
-
-Série é o que faz alguém seguir: a pessoa segue porque sabe que vem mais. Duas
-séries com nome, logo, cadência e título editorial iguais toda semana:
+A pessoa segue uma série porque sabe que vem mais. São duas, cada uma com nome,
+cadência e título editorial iguais toda semana:
 
 ### "Quem desenhou isso?" (pilar Design, toda segunda)
 Um objeto, app ou espaço do dia a dia, de preferência de Fortaleza, e as
 decisões de design por trás dele. Exemplos: a cadeira de plástico da barraca
-de praia, o cardápio por QR code, o botão "pular anúncio", a placa de ônibus
-de Fortaleza, o carrinho do mercado, a tela de "tem certeza que quer cancelar?".
+de praia, o cardápio por QR code, o botão "pular anúncio", a placa de ônibus,
+a tela de "tem certeza que quer cancelar?".
 
-É o pilar que constrói autoridade em design para o curso, e é o assunto que
-quase ninguém faz em português com sotaque local.
+É o pilar que constrói autoridade para o curso, e é o assunto que quase
+ninguém faz em português com sotaque local. Combina com o nome "Design de
+Produtos".
 
 ### "IA sem hype" (pilar IA no processo, toda sexta)
-Você mostra a tela usando IA num trabalho real, num caso concreto, e diz onde
-ela ajudou e onde errou. É o formato que mais gera salvamentos, porque é útil
-de verdade e se diferencia das listas de ferramentas.
+Você mostra a tela usando IA num trabalho real e diz onde ela ajudou e onde
+errou. É o formato que mais gera salvamentos.
 
 Os outros 2 Reels da semana são os **mini-ensaios** (pilar IA e sociedade):
-os mais filosóficos, que têm mais chance de viralizar.
+os mais filosóficos, com mais chance de viralizar.
 
-## 4. Atalhos legítimos para crescer
+## 5. Atalhos legítimos para crescer
 
 Tudo manual e dentro das regras do Instagram.
 
-1. **Reels de teste (Trial Reels).** Se a sua conta já tiver a função, mostre o
-   Reel primeiro só para quem não te segue. Assim dá para testar dois ganchos
-   do mesmo vídeo sem queimar o feed. Confira no app ao publicar.
-2. **Collab.** A cada 2 semanas, um post em parceria (coautoria) com alguém do
-   mesmo porte em design, tecnologia ou cultura de Fortaleza. O post aparece
-   para as duas audiências. Peça com o `/ig-dm`.
-3. **Material grátis por palavra-chave.** Você já tem material pronto ("Fontes
-   para projetos de design" e o conteúdo do webinar de engenharia de prompt).
-   O Reel fecha com "comenta FONTES que eu te mando". Responder a DM à mão nas
-   primeiras semanas também cria relação. Não é venda, é presente.
-4. **A sua base de alunos.** Você dá aula na UFC e na The Starter. Um convite
-   honesto em aula ("vou postar o que eu não tenho tempo de falar aqui") traz
-   as primeiras centenas de seguidores, e são as pessoas que mais comentam nas
-   primeiras horas.
-5. **Palestras e eventos.** Todo palco termina com "@espeditoroza" no último
-   slide e um story repostando quem te marcou.
-6. **Rodada de engajamento.** 20 minutos por dia comentando, à mão, em contas
-   maiores do nicho (`/ig-comment`).
-7. **Responder todo comentário na primeira hora** (`/ig-reply`). Conversa nos
-   comentários sustenta a distribuição do Reel.
+1. **A ponte com a @espeditoroza** (seção 1).
+2. **Collab com outros criadores.** A cada 2 semanas, em coautoria com alguém
+   do mesmo porte em design, tecnologia ou cultura de Fortaleza. Peça com o
+   `/ig-dm`.
+3. **Material grátis por palavra-chave.** "Comenta FONTES que eu te mando" a
+   lista de fontes, e no futuro o material do webinar de prompt. Responda à mão
+   no começo: isso cria relação.
+4. **Seus alunos.** UFC e The Starter: um convite honesto em aula ("vou postar
+   aqui o que não dá tempo de falar em sala") traz as primeiras centenas de
+   seguidores. São eles que comentam nas primeiras horas.
+5. **Palestras.** Último slide sempre com @studiodito.co e QR code.
+6. **Reels de teste (Trial Reels).** Se a função estiver liberada na conta,
+   teste dois ganchos do mesmo vídeo só com quem não segue.
+7. **Engajamento:** 20 min por dia comentando à mão (`/ig-comment`), **com
+   a @studiodito.co**, não com a pessoal.
+8. **Responder todo comentário na primeira hora** (`/ig-reply`).
 
-## 5. O que fica de fora
+## 6. O que fica de fora
 
-- Seguir para ser seguido de volta. É o oposto da limpeza que você está
-  fazendo e atrai seguidor que não interage.
-- Comprar seguidores, grupos de engajamento ou qualquer automação de
-  seguir/comentar. Isso derruba o alcance e arrisca a conta.
-- Sorteios. Atraem quem quer o prêmio, não quem quer o seu conteúdo.
+- Seguir para ser seguido de volta, comprar seguidores, grupos de engajamento
+  e qualquer automação de seguir ou comentar. Isso derruba o alcance e arrisca
+  a conta.
+- Sorteios: trazem quem quer o prêmio, não quem quer o conteúdo.
+- Vender o curso antes de a conta ter audiência.
 
-## 6. Rotina semanal (cerca de 6 a 8 horas)
+## 7. Rotina semanal (cerca de 6 a 8 horas)
 
 | Quando | O quê |
 |---|---|
 | Domingo (1h30) | Escrever os 4 roteiros da semana (`/ig-reel`) |
-| Segunda (2h) | Gravar os 4 de uma vez, trocando de roupa ou cenário entre eles |
+| Segunda (2h) | Gravar os 4 de uma vez, trocando de roupa ou cenário |
 | Ao longo da semana | Editar 1 por dia (30 a 40 min) |
-| Todo dia (20 min) | Rodada de engajamento e stories |
+| Todo dia (20 min) | Engajamento e stories nas duas contas |
 | Na hora do post (30 min) | Ficar no app respondendo comentários |
 | Sexta a cada 2 semanas | `/ig-audit`: o que funcionou, o que parar de fazer |
 
-## 7. Metas por etapa (@espeditoroza)
+## 8. Metas por etapa (@studiodito.co)
 
 | Data | Seguidores | Se vier abaixo |
 |---|---|---|
-| Sem 2 (22/11) | 4.800 | Normal. Fase de calibrar ganchos. |
-| Sem 4 (06/12) | 5.400 | Rodar `/ig-viral` e copiar formatos (não frases) de quem está crescendo no nicho. |
-| Sem 8 (03/01) | 7.000 | Dobrar a série que mais trouxe seguidores e cortar a que menos trouxe. |
+| Sem 1 (15/11) | 300 | Reforçar a ponte: mais stories na @espeditoroza, convite em aula. |
+| Sem 4 (06/12) | 1.000 | Rodar `/ig-viral` e estudar formatos de quem está crescendo no nicho. |
+| Sem 8 (03/01) | 4.000 | Dobrar a série que mais trouxe seguidores e cortar a que menos trouxe. |
 | Sem 13 (07/02) | 10.000 | |
 
-O ritmo acelera no fim de propósito: seguidores puxam alcance, e os ganchos
-melhoram com a prática.
+A curva sobe no fim de propósito: conta nova demora a ganhar distribuição, e
+os ganchos melhoram com a prática.
 
-**Os 3 números para acompanhar toda semana** (Painel profissional > Insights):
-- seguidores ganhos por Reel;
-- percentual de alcance em quem **não** te segue;
-- retenção nos 3 primeiros segundos.
-
-Curtidas não entram nessa conta.
+**Os 3 números da semana** (Painel profissional > Insights): seguidores
+ganhos por Reel, percentual de alcance em quem **não** segue e retenção nos 3
+primeiros segundos. Curtidas não entram nessa conta.

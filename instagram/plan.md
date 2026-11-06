@@ -1,7 +1,7 @@
-# Plano: 4 primeiras semanas (09/11 a 06/12/2026) · @espeditoroza
+# Plano: 4 primeiras semanas (09/11 a 06/12/2026) · @studiodito.co
 
 Para chegar a 10 mil seguidores em 3 meses: **5 posts por semana** (4 Reels e 1
-carrossel ou foto), em duas séries fixas. O porquê está em
+carrossel), em duas séries fixas. O porquê está em
 `estrategia-10k.md`. Nada de venda nesta fase.
 
 **Horário:** 19h (Fortaleza). O horário importa muito menos que os 2 primeiros
@@ -11,7 +11,7 @@ segundos do Reel.
 |---|---|---|
 | Seg | REEL | Série **Quem desenhou isso?** (Design, autoridade) |
 | Ter | REEL | Mini-ensaio (IA e sociedade, alcance) |
-| Qui | CARROSSEL ou FOTO | Alterna capa de ideia com post "Eu" |
+| Qui | CARROSSEL | Capa de ideia (fundo de cor sólida e título em caixa alta) |
 | Sex | REEL | Série **IA sem hype** (IA no processo, salvamentos) |
 | Dom | REEL | Mini-ensaio (alcance) |
 
@@ -25,7 +25,7 @@ segundos do Reel.
 ## Semana 2 (16/11)
 - **Seg** · Quem desenhou isso? #2 · A cadeira de plástico da barraca de praia
 - **Ter** · Ensaio · *A última coisa que você fez* sem pressa
-- **Qui** · Foto · Eu · Apresentação: quem sou e por que falo de design e IA (vai para os fixados)
+- **Qui** · Carrossel · O QUE É O STUDIO DITO / *design e IA, sem hype* (apresentação com o seu rosto e as 2 séries; vai para os fixados)
 - **Sex** · IA sem hype #2 · Um projeto real do briefing à entrega: onde a IA ajudou e onde atrapalhou
 - **Dom** · Ensaio · *Por que a* novidade *cansa tão rápido?*
 
@@ -39,11 +39,11 @@ segundos do Reel.
 ## Semana 4 (30/11)
 - **Seg** · Quem desenhou isso? #4 · O cardápio por QR code
 - **Ter** · Ensaio · *Por que todo app quer ser seu* amigo?
-- **Qui** · Foto · Eu · Palestra ou aula, com um aprendizado na legenda
+- **Qui** · Carrossel · TODO APP QUER SEU TEMPO / *e o design é a ferramenta pra isso*
 - **Sex** · IA sem hype #4 · O comando que eu uso para a IA criticar meu layout (continua o Reel "gentil demais")
 - **Dom** · **Collab** · Ensaio em coautoria com um parceiro (escolher até 23/11 e convidar com `/ig-dm`)
 
-**Reservas:** TODO APP QUER SEU TEMPO (carrossel), CANSADOS DE NOVIDADE
+**Reservas:** CANSADOS DE NOVIDADE
 (carrossel), versão em carrossel do Reel que mais render.
 
 **Regra de troca:** se acontecer algo real na semana (uma aula, um projeto, uma
@@ -64,14 +64,24 @@ Monte uma lista de 10 contas (não sugeri nomes para não inventar perfis):
 
 Depois, rode `/ig-comment` com a lista. Comentar é sempre manual.
 
+## @espeditoroza (pessoal) nessas 4 semanas
+- **Sem 1:** foto sua anunciando "o conteúdo de design e IA agora mora em
+  @studiodito.co", mais stories com link.
+- **Toda semana:** 1 ou 2 fotos suas (Fortaleza, palestras, bastidores) e
+  repost nos stories de todo post da @studiodito.co.
+- **Collab, 1 por semana:** o melhor Reel da semana sai em coautoria com a
+  @espeditoroza. Sugestão: Sem 1 seg, Sem 2 sex, Sem 3 qui, Sem 4 sex.
+
 ## Tarefas fora do calendário (até domingo, 08/11)
-- [ ] Aplicar o novo perfil (`perfil.md`): campo de nome, bio, link e destaques.
-- [ ] Arquivar o post do webinar de dez/2025 na @studiodito.co e pôr na bio
-  dela "conteúdo diário em @espeditoroza".
+- [ ] Ver se `@studiodito` está livre e, se estiver, trocar o @.
+- [ ] Aplicar o novo perfil (`perfil.md`): campo de nome, bio B, um link só e
+  4 destaques.
+- [ ] Arquivar os posts do webinar e do curso; fixar "Fontes para projetos de
+  design".
+- [ ] Na @espeditoroza: acrescentar à bio "design e IA em @studiodito.co".
 - [ ] Definir a paleta de fundos e a cor-assinatura (o primeiro carrossel é
   quinta, 12/11).
 - [ ] Modelos no Canva: capa de carrossel, título editorial do Reel e logo das
   2 séries.
 - [ ] Preencher as vivências dos 3 roteiros prontos e gravar os 3 no domingo.
-- [ ] Anunciar a conta para as suas turmas da UFC e da The Starter.
-- [ ] Continuar a limpeza de quem não segue de volta (100 a 150 por dia).
+- [ ] Anunciar a @studiodito.co para as suas turmas da UFC e da The Starter.

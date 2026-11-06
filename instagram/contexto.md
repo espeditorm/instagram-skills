@@ -3,6 +3,12 @@
 > Documento de contexto para usar em outras conversas com Claude, junto com as skills de Instagram.
 > Atualizado em 06/11/2026. Leia tudo antes de sugerir conteúdo.
 
+> **Atualização 06/11/2026:** o crescimento (meta: 10 mil em 3 meses) agora é na
+> **@studiodito.co**. A @espeditoroza vira a conta pessoal: fotos, Fortaleza,
+> palestras e poucos Reels ensinando. Detalhes em `estrategia-10k.md`. As
+> seções abaixo sobre posicionamento, pilares e sistema visual valem para a
+> @studiodito.co.
+
 ## 1. Quem sou
 
 - **Nome:** Espedito Roza
