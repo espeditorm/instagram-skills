@@ -48,6 +48,15 @@ com **[FALTA]** precisam de você: não dá para inventar.
 - **Ritmo:** **[FALTA: cronometre a leitura de um roteiro. Padrão usado
   enquanto isso: 160 palavras por minuto.]**
 
+## Estilo dos carrosséis (aprendido em 06/11/2026)
+
+- **Informativo antes de opinativo.** Fatos concretos: nomes, datas, empresas,
+  números. Linha do tempo funciona bem ("1946. ... / 1972. ...").
+- **Toda informação conferida em fonte** antes de ir para o post; as fontes
+  vão na legenda. Resumo de IA de buscador não conta como fonte: confirmar.
+- **Sem autopropaganda** dentro do conteúdo (nada de "a série X vai mostrar").
+- Fecho com pergunta simples para comentário.
+
 ## Minhas posições
 
 Coisas em que eu acredito e que parte do público não concorda. É daqui que

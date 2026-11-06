@@ -132,14 +132,19 @@ trocar a família da fonte. Em cada carrossel, selecione os textos das páginas
 6. Repara hoje numa coisa que funcionou tão bem que você nem percebeu. Alguém pensou muito pra ela parecer óbvia.
 7. E você, qual objeto do seu dia é tão bem desenhado que ninguém nota? · studiodito.co
 
-## 9 · O QUE A CADEIRA DE PLÁSTICO ENSINA · verde-limão
-1. **O QUE A CADEIRA DE PLÁSTICO ENSINA** / *o design mais democrático da praia*
-2. Barraca de praia em Fortaleza. Fim de tarde. Dezenas de cadeiras iguais, empilhadas, brancas ou vermelhas. **[foto sua]**
-3. Ninguém fotografa ela. Ninguém sabe quem desenhou. E mesmo assim ela está em quase todo lugar do mundo.
-4. Uma peça só, injetada de uma vez. Leve, empilha, aguenta sol, chuva e areia. É barata justamente por ser simples.
-5. Design não é só o que vai pro museu. Às vezes o projeto mais bem-sucedido é o que virou paisagem.
-6. Tem muita decisão escondida no que parece banal. É isso que a série "Quem desenhou isso?" vai mostrar.
-7. E você, qual objeto banal você queria entender por dentro? · studiodito.co
+## 9 · A CADEIRA QUE NINGUÉM ASSINA · verde-limão (REESCRITO: estilo informativo)
+1. **A CADEIRA QUE NINGUÉM ASSINA** / *a história da cadeira de plástico monobloco*
+2. Da barraca de praia em Fortaleza ao bar da esquina. O nome dela é monobloco: sai inteira de um molde só, em plástico injetado. **[foto real]**
+3. 1946. O canadense Douglas C. Simpson desenha uma das primeiras cadeiras de plástico feitas numa peça só. A ideia existia; faltava conseguir fabricar barato.
+4. Anos 1960. Joe Colombo lança a Universale (1965) e Vico Magistretti, a Selene (1967), as duas pela Kartell. O plástico vira assunto de design. **[foto real]**
+5. 1972. O engenheiro francês Henry Massonnet cria a Fauteuil 300, muitas vezes apontada como a primeira monobloco. Nos anos 70, Allibert e Grosfillex levam o modelo à escala.
+6. Ninguém registrou patente do desenho. Qualquer fábrica podia copiar, e copiou: só na Europa, cerca de 1 bilhão foram vendidas. Em 2011, fazer uma custava uns US$ 3,50.
+7. E você, sabia de onde veio a cadeira da praia? · studiodito.co
+
+**Fontes (para pôr na legenda):** Wikipedia, "Monobloc (chair)"; exposição
+"Monobloc – A Chair for the World", Vitra Design Museum (2017).
+**Corrigido do resumo do Google:** a data "1983" para a Grosfillex e a
+influência de Verner Panton não aparecem nas fontes; ficaram de fora.
 
 ## 10 · A PRESSA VIROU INTERFACE · musgo
 1. **A PRESSA VIROU INTERFACE** / *tudo é feito pra você não parar*
