@@ -47,9 +47,10 @@ ficar muito abaixo, mudamos o formato em vez de insistir.
   abandonado e vendedor. O curso volta quando for a hora.
 - **Manter** o carrossel "Fontes para projetos de design": é o seu material
   grátis (ver 5.3).
-- **@:** veja se `@studiodito` (sem o ".co") está livre. O ".co" é difícil de
-  falar em voz alta numa palestra ou num Reel. Se estiver ocupado, mantenha o
-  atual e use sempre a mesma forma escrita.
+- **@:** fica `@studiodito.co`, igual ao domínio do site. Uma marca só para
+  falar ("studiodito ponto co") leva ao Instagram e ao site. O link da bio
+  aponta para uma página do site com rastreio
+  (`studiodito.co/fontes?utm_source=instagram`).
 - Aplicar o perfil novo (`perfil.md`).
 
 ## 4. Séries fixas

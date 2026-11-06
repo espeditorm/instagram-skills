@@ -73,7 +73,7 @@ Depois, rode `/ig-comment` com a lista. Comentar é sempre manual.
   @espeditoroza. Sugestão: Sem 1 seg, Sem 2 sex, Sem 3 qui, Sem 4 sex.
 
 ## Tarefas fora do calendário (até domingo, 08/11)
-- [ ] Ver se `@studiodito` está livre e, se estiver, trocar o @.
+- [ ] Criar no site a página do material grátis (`studiodito.co/fontes`) para ser o link da bio, com `?utm_source=instagram`.
 - [ ] Aplicar o novo perfil (`perfil.md`): campo de nome, bio B, um link só e
   4 destaques.
 - [ ] Arquivar os posts do webinar e do curso; fixar "Fontes para projetos de

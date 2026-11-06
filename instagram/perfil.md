@@ -15,7 +15,7 @@ NOTA DO PERFIL  41/100
   destaques           0/8    nenhum
   grade               4/8    capas legíveis, mas são anúncios
   foto                5/6    rosto bom e nítido; o fundo podia ser mais limpo
-  @                   2/6    ".co" não se fala em voz alta
+  @                   5/6    igual ao domínio do site (studiodito.co): fácil de achar
   categoria/contato   4/6    conta profissional; sem botão de e-mail
   atividade recente   0/10   último post é do webinar de dez/2025
   stories             0/6    sem story no ar
@@ -79,13 +79,21 @@ Comece com 4, capas de cor sólida da paleta e uma palavra só:
 Mais tarde, crie **Curso**.
 
 ### 6. Link (8 pontos)
-Um link só: a página do material grátis de fontes, a mesma que o Reel
-promete. Depois, a página do curso. Hoje são 2 links; corte um.
+Um link só, e no seu site: `studiodito.co/fontes` (a página do material
+grátis que o Reel promete). Assim o tráfego do Instagram cai no seu domínio, e
+dali a pessoa conhece o resto do Studio. Depois, a página do curso. Hoje são 2
+links; corte um.
 
 ### 7. @
-Veja se `@studiodito` (sem ".co") está livre. Se estiver, troque já, antes de
-crescer: links e marcações com o @ antigo deixam de funcionar, e com 9
-seguidores isso não custa nada. Com 5 mil, custa.
+Fica `@studiodito.co`. O @ igual ao domínio do site é uma vantagem: quem vê
+um tem o outro. Para aproveitar:
+- Em voz alta (Reels, palestras), diga sempre do mesmo jeito: "studiodito
+  ponto co. É o @ e é o site."
+- No site, ponha o link do Instagram no topo ou no rodapé com o mesmo nome.
+- Último slide das palestras: só "studiodito.co", que leva aos dois.
+- Quando o link da bio apontar para o site, use um endereço com rastreio
+  (ex.: `studiodito.co/fontes?utm_source=instagram`) para ver no analytics do
+  site quanto tráfego vem do Instagram.
 
 ### 8. Categoria e contato
 Categoria **Educador** ou **Criador de conteúdo digital**, e um botão de
@@ -93,7 +101,7 @@ e-mail que você realmente lê.
 
 ---
 
-## Nota estimada depois das mudanças: cerca de 78/100
+## Nota estimada depois das mudanças: cerca de 81/100
 
 Faltam uns 20 pontos que nenhum texto resolve: um Reel bom para fixar, os
 stories virarem hábito e 9 capas consistentes na grade. Isso vem com 2 a 3
