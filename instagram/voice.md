@@ -56,6 +56,10 @@ com **[FALTA]** precisam de você: não dá para inventar.
   vão na legenda. Resumo de IA de buscador não conta como fonte: confirmar.
 - **Sem autopropaganda** dentro do conteúdo (nada de "a série X vai mostrar").
 - Fecho com pergunta simples para comentário.
+- **Referência aprovada:** "O bom design não se nota / até o dia em que ele
+  falta". Funciona porque parte de um objeto que todo mundo já usou (a
+  maçaneta), usa uma experiência que o leitor reconhece (puxar a porta que era
+  pra empurrar) e entrega uma ideia de design sem jargão.
 
 ## Minhas posições
 
