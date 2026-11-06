@@ -1,0 +1,131 @@
+<title>Fila de postagem Studio Dito</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap">
+<style>
+/* Layout: uma coluna de fichas de postagem, cada uma com a capa em miniatura ao lado das ações. */
+:root{
+  --bg:#FDF0D5; --surface:#FFF8EA; --fg:#1E1E1C; --muted:#5E5547; --line:#E6D6B4;
+  --accent:#C1121F; --ok:#386641; --ok-bg:#E3ECDD; --draft:#8A5A00; --draft-bg:#FBE9BC;
+  --verde:#386641; --vermelho:#C1121F; --azul:#669BBC; --rosa:#FF006E; --amarelo:#FFBE0B;
+  --creme:#FDF0D5; --tinta:#1E1E1C;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#191814; --surface:#23211C; --fg:#F5EBD6; --muted:#B5A98F; --line:#3A362D;
+  --accent:#FF5A63; --ok:#9CC79F; --ok-bg:#24331F; --draft:#F2C25B; --draft-bg:#3A2F12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191814; --surface:#23211C; --fg:#F5EBD6; --muted:#B5A98F; --line:#3A362D;
+  --accent:#FF5A63; --ok:#9CC79F; --ok-bg:#24331F; --draft:#F2C25B; --draft-bg:#3A2F12; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,64px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+.lede{margin:0;max-width:62ch;color:var(--muted)}
+.progress{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.bar{flex:1 1 200px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--fg);width:0;transition:width .3s}
+ol.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.card{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card.done{opacity:.6}
+.cover{aspect-ratio:3/4;max-width:100%;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px;text-align:center}
+.cover b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:17px;line-height:.95}
+.cover i{font-style:normal;font-size:8px;line-height:1.2}
+.c-verde{background:var(--verde);color:var(--creme)} .c-vermelho{background:var(--vermelho);color:var(--creme)}
+.c-azul{background:var(--azul);color:var(--tinta)} .c-rosa{background:var(--rosa);color:var(--tinta)} .c-amarelo{background:var(--amarelo);color:var(--tinta)}
+.info{display:flex;flex-direction:column;gap:10px;min-width:0}
+.top{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.num{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px}
+h2{margin:0;font-size:20px;line-height:1.2;font-weight:700;text-wrap:balance}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.chip{font-size:12px;font-weight:500;padding:2px 8px;border-radius:999px}
+.chip.ok{background:var(--ok-bg);color:var(--ok)} .chip.draft{background:var(--draft-bg);color:var(--draft)}
+.note{font-size:14px;margin:0;color:var(--fg);border-left:3px solid var(--accent);padding-left:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:15px;font-weight:500;padding:8px 14px;border-radius:6px;border:1px solid var(--fg);color:var(--fg);background:transparent;text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--fg);color:var(--bg)}
+.btn:hover{text-decoration:underline}
+.btn:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+label.check{display:inline-flex;gap:6px;align-items:center;font-size:14px;cursor:pointer;margin-left:auto}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:500;font-size:15px}
+.caption{white-space:pre-wrap;font-size:15px;line-height:1.55;margin:12px 0;max-width:65ch;overflow-wrap:anywhere}
+.caprow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+footer{font-size:13px;color:var(--muted)}
+@media (max-width:520px){.card{grid-template-columns:88px minmax(0,1fr);gap:14px}.cover b{font-size:12px}.cover i{display:none}label.check{margin-left:0}}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+</style>
+<div class="wrap">
+<header>
+  <span class="eyebrow">@studiodito.co · carrosséis</span>
+  <h1>Fila de postagem</h1>
+  <p class="lede">Os 10 carrosséis na ordem sugerida de postagem, um por semana na quinta. Em cada um, abra o post no Canva para baixar as páginas e copie a legenda. As cores se alternam para a grade não repetir a mesma capa lado a lado.</p>
+  <div class="progress"><div class="bar"><span id="bar"></span></div><span id="count">0 de 10 postados</span></div>
+</header>
+<ol class="list" id="list"></ol>
+<footer>A marcação "Postado" fica salva só neste navegador. Legendas marcadas como rascunho ainda não foram revisadas por você.</footer>
+</div>
+<script>
+const POSTS = [{"id": "cadeira", "title": "A cadeira que ninguém assina", "sub": "a história da cadeira de plástico monobloco", "cor": "verde", "url": "https://www.canva.com/design/DAHaJYT5A1U/edit", "pages": 8, "ok": true, "note": "", "caption": "Ela está em quase toda barraca de praia de Fortaleza, e pouca gente sabe quem desenhou. A resposta é: muita gente.\n\nA cadeira de plástico monobloco é injetada numa peça só, em polipropileno. Por isso é leve, empilha e custa pouco.\n\nA linha do tempo: Douglas C. Simpson (1946), Joe Colombo e Vico Magistretti nos anos 60, Henry Massonnet com a Fauteuil 300 (1972). Como ninguém patenteou o desenho, qualquer fábrica pôde copiar.\n\nFontes: Wikipedia, \"Monobloc (chair)\"; exposição \"Monobloc: A Chair for the World\", Vitra Design Museum (2017).\n\nSalva pra lembrar disso na próxima vez que sentar numa.\n\n#design #designdeproduto #historiadodesign #fortaleza #monobloco"}, {"id": "bom-design", "title": "O bom design não se nota", "sub": "até o dia em que ele falta", "cor": "azul", "url": "https://www.canva.com/design/DAHaJfA0dys/edit", "pages": 7, "ok": true, "note": "", "caption": "Sabe aquela porta que você puxa e era pra empurrar? Ela tem nome: porta de Norman.\n\nO nome vem de Don Norman, autor de \"O design do dia a dia\" (1988). A ideia dele é simples: se a pessoa precisa de uma placa dizendo \"empurre\", o problema é do design, não da pessoa.\n\nBom design funciona tão bem que some. A gente só repara quando ele falta: no formulário que apaga tudo, no botão que parece clicável e não é.\n\nMe conta nos comentários: qual objeto do seu dia é tão bem desenhado que ninguém nota?\n\n#design #ux #designdeproduto #usabilidade #donnorman"}, {"id": "generico", "title": "A estética do genérico", "sub": "por que tudo feito com IA parece igual", "cor": "vermelho", "url": "https://www.canva.com/design/DAHaJS1qhbo/edit", "pages": 7, "ok": true, "note": "", "caption": "Pede pra três IAs diferentes \"um café aconchegante\" e compara. Parece que elas combinaram o resultado.\n\nNão é coincidência. Modelos de imagem geram o resultado mais provável, e o mais provável é a média de tudo o que eles já viram. A média é agradável justamente porque não incomoda ninguém.\n\nEstilo é escolha. Quando ninguém escolhe, sobra o genérico.\n\nNão é pra parar de usar IA. É pra saber que o trabalho começa onde a média termina.\n\nE você, o que no seu trabalho só você faria?\n\n#design #inteligenciaartificial #ia #designgrafico #criatividade"}, {"id": "pressa", "title": "A pressa virou interface", "sub": "tudo é feito pra você não parar", "cor": "amarelo", "url": "https://www.canva.com/design/DAHaJS3UN7Q/edit", "pages": 7, "ok": true, "note": "", "caption": "Vídeo em 2x, livro resumido em 5 minutos, resposta pronta antes da pergunta terminar. Quando foi que a pressa virou o padrão?\n\nA gente desenhou ferramentas pra economizar tempo. E usa o tempo que sobra pra consumir mais coisa rápida.\n\nA IA acelera ainda mais. Só que entender alguém, ter uma ideia própria e mudar de opinião continuam acontecendo devagar.\n\nTalvez o próximo bom design seja o que ajuda a desacelerar.\n\nE você, qual foi a última coisa que fez sem pressa?\n\n#design #tecnologia #inteligenciaartificial #comportamento #ux"}, {"id": "quem-desenhou", "title": "Quem desenhou o seu dia?", "sub": "nenhum design é neutro", "cor": "rosa", "url": "https://www.canva.com/design/DAHaJQL73tc/edit", "pages": 10, "ok": false, "note": "Antes de postar, confira a frase da página 5 sobre o TED (Wurman fundou o TED em 1984).", "caption": "O despertador, o primeiro app do dia, a ordem do feed. Tudo isso foi desenhado por alguém.\n\nQuase sempre com uma meta que não é a sua.\n\nNo design isso tem nome: arquitetura da informação. O termo ganhou força em 1976, quando o arquiteto Richard Saul Wurman o escolheu como tema de um congresso nos EUA. Em 1989 ele resumiu em 5 os jeitos de organizar informação: lugar, alfabeto, tempo, categoria e hierarquia.\n\nQuem decide a ordem decide muito do que você escolhe. Em 2016, o Instagram trocou o feed em ordem de tempo por um feed ordenado por algoritmo. Os posts eram os mesmos. Só mudou a ordem.\n\nNenhum design é neutro.\n\nE você, qual escolha do seu dia não foi sua?\n\nFontes: Richard Saul Wurman, \"Information Anxiety\" (1989); Johnson e Goldstein, \"Do Defaults Save Lives?\", Science (2003); anúncio do Instagram de março de 2016.\n\n#design #arquiteturadainformacao #ux #designdeproduto #historiadodesign"}, {"id": "todo-app", "title": "Todo app quer seu tempo", "sub": "e o design é a ferramenta pra isso", "cor": "verde", "url": "https://www.canva.com/design/DAHaJZtY1Go/edit", "pages": 7, "ok": false, "note": "", "caption": "A rolagem que não acaba, o vídeo que começa sozinho, o pontinho vermelho. Nada disso é acidente.\n\nSão decisões de design, testadas e medidas pra você ficar mais um pouco. Aza Raskin, que criou a rolagem infinita em 2006, já disse em entrevistas que se arrepende do que ela virou.\n\nO problema não é o design ser bom em prender. É medir sucesso só pelo tempo que alguém não consegue sair.\n\nUm bom design também pode te deixar ir embora.\n\nE você, qual app você abre sem nem perceber?\n\n#design #ux #tecnologia #designdeproduto #comportamento"}, {"id": "ia-concorda", "title": "A IA que concorda com tudo", "sub": "elogio demais também é um defeito", "cor": "vermelho", "url": "https://www.canva.com/design/DAHaJYu8zV0/edit", "pages": 7, "ok": false, "note": "", "caption": "Você manda um texto e a IA acha ótimo. Manda o oposto e ela também acha. Já reparou?\n\nNão é acaso. Esses modelos também aprendem com notas que pessoas dão às respostas, e a gente costuma dar nota alta pra quem concorda. Pesquisadores chamam isso de bajulação (em inglês, sycophancy).\n\nNo design, feedback que só elogia não serve. A crítica dura é a que faz o projeto melhorar.\n\nUma saída simples: pergunte o contrário. \"Onde isso está fraco?\" \"O que um cliente exigente diria?\"\n\nE você, quando foi a última vez que a IA discordou de você?\n\n#inteligenciaartificial #ia #design #engenhariadeprompt #feedback"}, {"id": "esforco", "title": "O fim do esforço visível", "sub": "quando tudo parece fácil, nada parece valioso", "cor": "azul", "url": "https://www.canva.com/design/DAHaJbIDbbs/edit", "pages": 7, "ok": false, "note": "", "caption": "Antes dava pra ver o trabalho: o rascunho, a prova de cor, a maquete. Hoje um cartaz aparece pronto em segundos.\n\nE aí vem a pergunta: \"mas isso não é só apertar um botão?\"\n\nO valor de um trabalho nunca foi só o tempo gasto. Mas o tempo era a parte que todo mundo conseguia ver. Quando o esforço some, o que sobra pra mostrar é o critério: o que você escolheu e o que recusou.\n\nTalvez o novo trabalho seja contar o processo.\n\nE você, que parte do seu trabalho ninguém vê?\n\n#design #designgrafico #processocriativo #inteligenciaartificial #criatividade"}, {"id": "cansados", "title": "Cansados de novidade", "sub": "o hype também tem prazo de validade", "cor": "amarelo", "url": "https://www.canva.com/design/DAHaJeNHQcc/edit", "pages": 7, "ok": false, "note": "", "caption": "Toda semana sai uma ferramenta que \"muda tudo\". Na semana seguinte, outra muda tudo de novo.\n\nNo começo era empolgante. Agora parece uma esteira: você corre só pra continuar no mesmo lugar.\n\nEsse cansaço não é preguiça. É perceber que nem toda novidade é uma melhoria. Uma ferramenta nova não resolve um problema que você ainda não entendeu.\n\nTudo bem não testar tudo. Escolher o que ignorar também é uma forma de pensar.\n\nE você, qual novidade decidiu deixar passar?\n\n#inteligenciaartificial #ia #design #tecnologia #produtividade"}, {"id": "designer", "title": "O designer não vai acabar", "sub": "mas o designer que só executa, talvez", "cor": "rosa", "url": "https://www.canva.com/design/DAHaJSf3liU/edit", "pages": 7, "ok": false, "note": "", "caption": "Toda semana alguém anuncia o fim do designer. E toda semana alguém ainda precisa decidir o que vale a pena desenhar.\n\nA IA ficou ótima no \"como\": gera tela, logo e variação em segundos. O \"por quê\" continua sendo trabalho de gente. Pra quem é isso? O que essa pessoa precisa? O que fica de fora?\n\nA parte de só executar ficou barata. A parte de entender, perguntar e decidir sempre foi o design de verdade.\n\nNão tô dizendo que ninguém vai perder trabalho. Tô dizendo que o trabalho mudou de lugar.\n\nE você, hoje passa mais tempo executando ou decidindo?\n\n#design #designer #inteligenciaartificial #carreira #uxdesign"}];
+const KEY = "studiodito-postados";
+let done = {};
+try { done = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { done = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} }
+function esc(s){ return s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const list = document.getElementById("list");
+POSTS.forEach((p, i) => {
+  const first = p.caption.split("\n")[0];
+  const li = document.createElement("li");
+  li.className = "card" + (done[p.id] ? " done" : "");
+  li.id = p.id;
+  li.innerHTML = `
+    <div class="cover c-${p.cor}" aria-hidden="true"><b>${esc(p.title)}</b><i>${esc(p.sub)}</i></div>
+    <div class="info">
+      <div class="top"><span class="num">${String(i+1).padStart(2,"0")}</span><h2>${esc(p.title)}</h2></div>
+      <div class="meta"><span>${p.cor} · ${p.pages} páginas</span>
+        <span class="chip ${p.ok ? "ok" : "draft"}">${p.ok ? "Legenda aprovada" : "Legenda em rascunho"}</span></div>
+      ${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}
+      <div class="actions">
+        <a class="btn primary" href="${p.url}" target="_blank" rel="noopener">Abrir no Canva ↗</a>
+        <a class="btn" href="#legenda-${p.id}">Ver legenda</a>
+        <label class="check"><input type="checkbox" id="feito-${p.id}" ${done[p.id] ? "checked" : ""}> Postado</label>
+      </div>
+      <details id="legenda-${p.id}">
+        <summary>Legenda</summary>
+        <div class="caption" id="texto-${p.id}">${esc(p.caption)}</div>
+        <div class="caprow"><button class="btn" type="button" data-copy="${p.id}">Copiar legenda</button>
+          <span>${p.caption.length} caracteres · 1ª linha com ${first.length}</span></div>
+      </details>
+    </div>`;
+  list.appendChild(li);
+});
+function updateCount(){
+  const n = POSTS.filter(p => done[p.id]).length;
+  document.getElementById("count").textContent = `${n} de ${POSTS.length} postados`;
+  document.getElementById("bar").style.width = (n / POSTS.length * 100) + "%";
+}
+updateCount();
+list.addEventListener("change", e => {
+  const t = e.target; if (!t.id.startsWith("feito-")) return;
+  const id = t.id.slice(6); done[id] = t.checked; save();
+  document.getElementById(id).classList.toggle("done", t.checked); updateCount();
+});
+list.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  const p = POSTS.find(x => x.id === b.dataset.copy);
+  const ok = () => { b.textContent = "Copiada"; setTimeout(() => b.textContent = "Copiar legenda", 1800); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("texto-" + p.id));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Texto selecionado: copie com Ctrl+C"; };
+  try { navigator.clipboard.writeText(p.caption).then(ok, fallback); } catch (err) { fallback(); }
+});
+function openFromHash(){
+  const h = location.hash.slice(1);
+  if (!h.startsWith("legenda-")) return;
+  const d = document.getElementById(h); if (!d) return;
+  d.open = true; d.scrollIntoView({block:"start"});
+}
+window.addEventListener("hashchange", openFromHash);
+openFromHash();
+</script>
