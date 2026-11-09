@@ -81,6 +81,12 @@ textarea,select{font:inherit;font-size:15px;color:var(--fg);background:var(--bg)
 .check-list{margin:0;padding-left:20px;font-size:14px;border-left:3px solid var(--accent);padding-block:2px}
 .small-h{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 4px;font-weight:500}
 .empty{color:var(--muted);font-size:15px;margin:0}
+.build{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.build-msg{margin:0;font-size:15px}
+.build-msg.err{color:var(--accent)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.thumbs img{width:100%;max-width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+.nothumb{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:4px;padding:4px}
 @media (max-width:520px){.card,.idea{grid-template-columns:88px minmax(0,1fr);gap:14px}.cover b{font-size:12px}.cover i{display:none}label.check{margin-left:0}}
 @media (prefers-reduced-motion:reduce){.bar span{transition:none}}
 </style>
@@ -98,7 +104,7 @@ textarea,select{font:inherit;font-size:15px;color:var(--fg);background:var(--bg)
     <span class="eyebrow">Novos carrosséis</span>
     <h2 class="h-sec" id="gen-h">Gerar no mesmo estilo</h2>
   </div>
-  <p class="lede">Cada ideia sai com capa, páginas (com as que levam imagem), fecho, legenda, fontes e a lista do que conferir. Salve as que você gostar. Depois, é só me pedir "monte as ideias salvas" que eu crio no Canva com o mesmo modelo dos outros 10.</p>
+  <p class="lede">Cada ideia sai com capa, páginas (com as que levam imagem), fecho, legenda, fontes e a lista do que conferir. Salve as que você gostar e clique em "Montar no Canva": a página copia o modelo dos outros 10, gera as 2 imagens, preenche as 7 páginas e mostra a prévia antes de salvar na pasta Studio Dito.</p>
   <div class="gen-controls">
     <div class="row">
       <button class="btn primary" id="btn-random" type="button">Gerar 3 com temas aleatórios</button>
@@ -232,7 +238,7 @@ Regras de estilo, aprendidas com os carrosséis que o Dito aprovou:
 Estrutura de cada carrossel:
 - titulo: título-tese de até 5 palavras (vai em caixa alta na capa).
 - subtitulo: uma linha em minúsculas que vira o jogo.
-- paginas: de 6 a 8 páginas internas. A primeira traz uma cena que o leitor reconhece e desperta curiosidade. Pelo menos 2 páginas têm uma imagem ocupando uma faixa da página: descreva a imagem em "imagem" (diga se deve ser foto real); nas outras, "imagem" fica "".
+- paginas: EXATAMENTE 5 páginas internas, na ordem fixa do modelo do Canva. Página 1: com imagem, texto de até 28 palavras, uma cena que o leitor reconhece e que desperta curiosidade. Página 2: só texto, até 35 palavras. Página 3: com imagem, texto de até 28 palavras. Páginas 4 e 5: só texto, até 35 palavras. Nas páginas com imagem, descreva em "imagem" uma fotografia editorial que ilustre a página (cena concreta, sem texto escrito na imagem); nas outras, "imagem" fica "".
 - fecho: pergunta simples começando com "E você,".
 - legenda: a primeira linha tem até 120 caracteres e funciona sozinha antes do "... mais"; depois, 2 ou 3 parágrafos curtos com o contexto e os fatos; depois, a mesma pergunta do fecho; se houver fatos, uma linha "Fontes: ..."; por fim, 5 hashtags em português, minúsculas e sem acento. Separe os parágrafos com linha em branco.
 - fontes: as referências que sustentam os fatos (livro, artigo, museu, site). Lista vazia se não houver fato.
@@ -263,8 +269,7 @@ function lint(c){
   const words = (c.paginas || []).map(p => String(p.texto || "").split(/\s+/).filter(Boolean).length);
   const maxW = Math.max(0, ...words);
   checks.push([`até ${maxW} palavras por página`, maxW <= 35]);
-  const imgs = (c.paginas || []).filter(p => String(p.imagem || "").trim()).length;
-  checks.push([`${imgs} página${imgs === 1 ? "" : "s"} com imagem`, imgs >= 2]);
+  checks.push([`${(c.paginas || []).length} páginas internas`, fitsTemplate(c)]);
   const first = String(c.legenda || "").split("\n")[0];
   checks.push([`1ª linha da legenda: ${first.length} caracteres`, first.length <= 125]);
   const tags = (String(c.legenda || "").match(/#[\p{L}\d_]+/gu) || []).length;
@@ -403,16 +408,194 @@ form.addEventListener("submit", e => {
   gerar(`Crie ${n} ${n === 1 ? "carrossel" : "versões diferentes de carrossel (ângulos diferentes, cores diferentes)"} a partir desta descrição do Dito: """${txt.slice(0, 4000)}"""`, "pedido: " + txt.slice(0, 500));
 });
 
+/* ---------- Montar no Canva ---------- */
+const CANVA = "Canva";
+const MODELO = "DAHacJZDxKs";
+const PASTA = "FAHaJZm9aVk";
+const FUNDOS = { verde: "MAHaKVrbS-4", vermelho: "MAHaKSZFlfU", azul: "MAHaKW6ethc", rosa: "MAHaKX9F9vc", amarelo: "MAHaKefvTik" };
+const TEXTO_CLARO = ["verde", "vermelho"];
+const CREME = "#FDF0D5", TINTA = "#1E1E1C";
+let mcp = null, building = false;
+const builds = {};
+
+function fitsTemplate(c){
+  const p = c.paginas || [];
+  return p.length === 5 && !!String(p[0]?.imagem || "").trim() && !!String(p[2]?.imagem || "").trim();
+}
+function titleLines(t){
+  const words = String(t).trim().split(/\s+/); const lines = []; let cur = "";
+  for (const w of words) { if (cur && (cur + " " + w).length > 12) { lines.push(cur); cur = w; } else cur = cur ? cur + " " + w : w; }
+  if (cur) lines.push(cur);
+  return lines.join("\n");
+}
+async function canva(tool, input){
+  const r = await mcp.callTool(CANVA, tool, input, { cache: false });
+  return r;
+}
+function payloadOf(r){
+  let p = r?.payload;
+  if (typeof p === "string") { try { p = JSON.parse(p); } catch (e) {} }
+  return p;
+}
+function previewOf(r){
+  const img = (r?.content || []).find(b => b.type === "image" && b.data);
+  return img ? `data:${img.mimeType || "image/png"};base64,${img.data}` : null;
+}
+const wait = ms => new Promise(res => setTimeout(res, ms));
+function canvaError(e){
+  const code = e?.code;
+  if (code === "server_not_connected") return "O Canva não está conectado à sua conta. Adicione em claude.ai, Configurações, Conectores.";
+  if (code === "needs_reauth") return "A conexão com o Canva expirou. Reconecte em claude.ai, Configurações, Conectores.";
+  if (code === "not_in_manifest" || code === "approval_required") return "O acesso ao Canva não foi permitido para esta página. Clique em Montar de novo e permita.";
+  if (code === "selection_required") return "Você tem mais de um Canva conectado. Escolha qual usar no aviso do claude.ai.";
+  if (code === "blocked_by_policy") return "A sua organização bloqueia o Canva nesta página.";
+  if (code === "tool_error") return "O Canva recusou um passo: " + String(e.message || "").slice(0, 200);
+  return "Não deu para falar com o Canva agora. Tente de novo em instantes.";
+}
+
+async function gerarImagem(descricao){
+  const start = payloadOf(await canva("generate-image", {
+    prompt: `${descricao}. Fotografia editorial, luz natural, composição horizontal limpa, sem nenhum texto escrito na imagem.`,
+    aspectRatio: "LANDSCAPE_3_2",
+    user_intent: "Gerar imagem para página de carrossel do Instagram"
+  }));
+  const jobId = start?.jobId;
+  if (!jobId) throw { code: "tool_error", message: "a geração de imagem não devolveu um job" };
+  for (let i = 0; i < 45; i++) {
+    await wait(4000);
+    const r = await canva("get-generate-image-job", { jobId, user_intent: "Conferir imagem gerada para o carrossel" });
+    const txt = JSON.stringify(r?.payload ?? "") + " " + (r?.content || []).filter(b => b.type === "text").map(b => b.text).join(" ");
+    if (/FAILURE/.test(txt)) throw { code: "tool_error", message: "a geração de imagem falhou" };
+    const m = txt.match(/media id is (M[A-Za-z0-9_-]{8,})/) || txt.match(/Resource link: (M[A-Za-z0-9_-]{8,})/);
+    if (m) return m[1];
+  }
+  throw { code: "tool_error", message: "a imagem demorou demais" };
+}
+
+function mainText(page){
+  return (page.elements || []).filter(x => x.type === "text").map(x => ({ x, t: (x.textRegions || []).map(r => r.characters).join("") }))
+    .filter(o => o.t && o.t !== "studiodito.co" && !/^\d\d\/\d\d$/.test(o.t));
+}
+
+async function montar(id){
+  if (building || !mcp) return;
+  const doc = saved.find(s => s.id === id); if (!doc) return;
+  const c = doc.data;
+  if (!fitsTemplate(c)) { builds[id] = { error: "Esta ideia não tem as 5 páginas internas do modelo. Gere de novo para montar no Canva." }; renderSaved(); return; }
+  building = true;
+  const st = builds[id] = { stage: "Copiando o modelo no Canva..." }; renderSaved();
+  const step = msg => { st.stage = msg; renderSaved(); };
+  try {
+    const copy = payloadOf(await canva("copy-design", { design_id: MODELO, user_intent: "Criar carrossel novo a partir do modelo" }));
+    const design = copy?.design; if (!design?.id) throw { code: "tool_error", message: "a cópia do modelo não devolveu o design" };
+    st.designId = design.id; st.url = design.urls?.edit_url || `https://www.canva.com/design/${design.id}/edit`;
+    step("Gerando as 2 imagens (leva 1 a 2 minutos)...");
+    const imgs = await Promise.allSettled([gerarImagem(c.paginas[0].imagem), gerarImagem(c.paginas[2].imagem)]);
+    const media = imgs.map(r => r.status === "fulfilled" ? r.value : null);
+    step("Abrindo o design...");
+    const rd = payloadOf(await canva("read-design", { design_id: design.id, open_transaction: true, filter: { fields: ["design_content"] }, user_intent: "Abrir o carrossel novo para preencher" }));
+    const tx = rd?.transaction?.transaction_id; const pages = rd?.design_content?.pages;
+    if (!tx || !Array.isArray(pages) || pages.length !== 7) throw { code: "tool_error", message: "o modelo não tem as 7 páginas esperadas" };
+    st.tx = tx;
+    const cor = CORES.includes(c.cor) ? c.cor : "azul";
+    const texCor = TEXTO_CLARO.includes(cor) ? CREME : TINTA;
+    const textos = [null, c.paginas[0].texto, c.paginas[1].texto, c.paginas[2].texto, c.paginas[3].texto, c.paginas[4].texto];
+    st.previews = [];
+    for (let i = 0; i < 7; i++) {
+      step(`Preenchendo a página ${i + 1} de 7...`);
+      const pg = pages[i]; const ops = []; const texts = mainText(pg);
+      if (i === 0) {
+        const [titulo, sub] = texts.slice().sort((a, b) => (b.x.textRegions[0].formatting.fontSize || 0) - (a.x.textRegions[0].formatting.fontSize || 0));
+        ops.push({ type: "update_title", title: "Carrossel " + c.titulo });
+        ops.push({ type: "update_fill", locator_id: pg.locator_id, asset_type: "image", asset_id: FUNDOS[cor], alt_text: "fundo" });
+        if (titulo) ops.push({ type: "find_and_replace_text", locator_id: titulo.x.locator_id, find_text: titulo.t, replace_text: titleLines(c.titulo) });
+        if (sub) ops.push({ type: "find_and_replace_text", locator_id: sub.x.locator_id, find_text: sub.t, replace_text: c.subtitulo || "" });
+        for (const o of [titulo, sub]) if (o) ops.push({ type: "format_text", locator_id: o.x.locator_id, formatting: { color: texCor } });
+      } else if (i === 6) {
+        ops.push({ type: "update_fill", locator_id: pg.locator_id, asset_type: "image", asset_id: FUNDOS[cor], alt_text: "fundo" });
+        const q = texts[0];
+        if (q) ops.push({ type: "find_and_replace_text", locator_id: q.x.locator_id, find_text: q.t, replace_text: c.fecho || "" });
+        for (const x of (pg.elements || []).filter(x => x.type === "text")) ops.push({ type: "format_text", locator_id: x.locator_id, formatting: { color: texCor } });
+      } else {
+        const t = texts[0];
+        if (t) ops.push({ type: "find_and_replace_text", locator_id: t.x.locator_id, find_text: t.t, replace_text: textos[i] || "" });
+        const rect = (pg.elements || []).find(x => x.type === "rect");
+        const mi = i === 1 ? media[0] : i === 3 ? media[1] : null;
+        if (rect && mi) ops.push({ type: "update_fill", locator_id: rect.locator_id, asset_type: "image", asset_id: mi, alt_text: String(c.paginas[i === 1 ? 0 : 2].imagem).slice(0, 240) });
+      }
+      const r = await canva("edit-design", { transaction_id: tx, page_index: i + 1, finalize: "keep_open", operations: ops, user_intent: "Preencher página do carrossel novo" });
+      st.previews.push(previewOf(r));
+    }
+    st.missingImg = media.filter(m => !m).length;
+    st.stage = null; st.ready = true; renderSaved();
+  } catch (e) {
+    st.stage = null; st.error = canvaError(e) + (st.designId ? " Uma cópia do modelo ficou no seu Canva e pode ser apagada." : ""); renderSaved();
+  } finally { building = false; }
+}
+
+async function finalizar(id, salvar){
+  const st = builds[id]; if (!st?.tx) return;
+  st.ready = false; st.stage = salvar ? "Salvando no Canva..." : "Descartando..."; renderSaved();
+  try {
+    await canva("edit-design", { transaction_id: st.tx, finalize: salvar ? "commit" : "cancel", user_intent: salvar ? "Salvar carrossel novo aprovado" : "Descartar carrossel novo" });
+    if (salvar) {
+      try { await canva("move-item-to-folder", { item_id: st.designId, to_folder_id: PASTA, user_intent: "Guardar o carrossel na pasta Studio Dito" }); } catch (e) {}
+      await db.collection("ideias").doc(id).update({ status: "montado", canvaId: st.designId, canvaUrl: st.url, montadoEm: new Date().toISOString() });
+      delete builds[id];
+    } else {
+      builds[id] = { error: "Descartado. A cópia do modelo continua no seu Canva com o texto antigo; pode apagar." };
+    }
+  } catch (e) {
+    st.stage = null; st.error = canvaError(e) + " Se a edição expirou, clique em Montar no Canva de novo.";
+  }
+  renderSaved();
+}
+
+function buildPanel(id){
+  const st = builds[id]; if (!st) return null;
+  const box = el("div", "build");
+  if (st.stage) box.append(el("p", "build-msg", st.stage));
+  if (st.error) box.append(el("p", "build-msg err", st.error));
+  if (st.ready) {
+    box.append(el("p", "build-msg", "Confira as páginas. Nada foi salvo no Canva ainda." + (st.missingImg ? ` ${st.missingImg} imagem não foi gerada: troque no Canva depois de salvar.` : "")));
+    const grid = el("div", "thumbs");
+    st.previews.forEach((src, i) => { if (src) { const im = el("img"); im.src = src; im.alt = `Página ${i + 1}`; grid.append(im); } else grid.append(el("span", "nothumb", `Página ${i + 1}: sem prévia`)); });
+    box.append(grid);
+    const row = el("div", "actions");
+    const ok = el("button", "btn primary", "Salvar no Canva"); ok.type = "button"; ok.onclick = () => finalizar(id, true);
+    const no = el("button", "btn", "Descartar"); no.type = "button"; no.onclick = () => finalizar(id, false);
+    row.append(ok, no); box.append(row);
+  }
+  return box;
+}
+
+function savedActions(s){
+  const acts = [];
+  if (s.data.status === "montado" && s.data.canvaUrl) {
+    const a = el("a", "btn primary", "Abrir no Canva ↗"); a.href = s.data.canvaUrl; a.target = "_blank"; a.rel = "noopener"; acts.push(a);
+  } else {
+    const b = el("button", "btn primary", "Montar no Canva"); b.type = "button";
+    b.disabled = !mcp || building; if (!mcp) b.title = "Precisa do Canva conectado e da página aberta no claude.ai";
+    b.onclick = () => montar(s.id); acts.push(b);
+  }
+  acts.push(removeButton(s.id));
+  return acts;
+}
+
 function renderSaved(){
   if (!db) { savedEl.replaceChildren(el("p", "empty", "As ideias salvas só aparecem com a página aberta no claude.ai.")); return; }
   if (!saved.length) { savedEl.replaceChildren(el("p", "empty", "Nenhuma ideia salva ainda. Gere acima e clique em \"Salvar para montar no Canva\".")); return; }
-  savedEl.replaceChildren(...saved.map(s => ideaCard(s.data, { badge: s.data.status === "montado" ? "Montado no Canva" : "Para montar no Canva", actions: [removeButton(s.id)] })));
+  savedEl.replaceChildren(...saved.map(s => {
+    const card = ideaCard(s.data, { badge: s.data.status === "montado" ? "Montado no Canva" : "Para montar no Canva", actions: savedActions(s) });
+    const panel = buildPanel(s.id); if (panel) card.querySelector(".info").append(panel);
+    return card;
+  }));
 }
 
 (async () => {
   btnRandom.disabled = true; btnPedido.disabled = true;
-  const [s, d] = await Promise.all([window.claude?.use?.("sample") ?? null, window.claude?.use?.("db") ?? null].map(p => Promise.resolve(p).catch(() => null)));
-  sample = s; db = d;
+  const [s, d, m] = await Promise.all([window.claude?.use?.("sample") ?? null, window.claude?.use?.("db") ?? null, window.claude?.use?.("mcp") ?? null].map(p => Promise.resolve(p).catch(() => null)));
+  sample = s; db = d; mcp = m;
   if (!sample) document.getElementById("gen-off").hidden = false;
   btnRandom.disabled = !sample; btnPedido.disabled = !sample;
   if (!db) { renderSaved(); return; }
