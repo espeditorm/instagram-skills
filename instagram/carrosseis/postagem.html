@@ -54,7 +54,34 @@ summary{cursor:pointer;font-weight:500;font-size:15px}
 .caption{white-space:pre-wrap;font-size:15px;line-height:1.55;margin:12px 0;max-width:65ch;overflow-wrap:anywhere}
 .caprow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 footer{font-size:13px;color:var(--muted)}
-@media (max-width:520px){.card{grid-template-columns:88px minmax(0,1fr);gap:14px}.cover b{font-size:12px}.cover i{display:none}label.check{margin-left:0}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jump{display:flex;gap:16px;flex-wrap:wrap;font-size:15px;font-weight:500}
+.jump a{color:var(--fg)}
+.gen{display:flex;flex-direction:column;gap:20px;border-top:2px solid var(--fg);padding-top:28px}
+.h-sec{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+.gen-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.gen-controls form{display:flex;flex-direction:column;gap:8px}
+.gen-controls label{font-weight:500;font-size:15px}
+textarea,select{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;width:100%;box-sizing:border-box;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row select{width:auto}
+.btn:disabled{opacity:.5;cursor:default;text-decoration:none}
+.gen-status{font-size:15px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;min-height:1.5em}
+.gen-status .err{color:var(--accent)}
+.ideas{display:flex;flex-direction:column;gap:16px}
+.idea{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.idea h4{margin:0;font-size:20px;line-height:1.2;text-wrap:balance}
+.idea .sub{margin:0;color:var(--muted);font-size:15px}
+.idea ol.pages{margin:8px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:65ch}
+.idea ol.pages li{font-size:15px}
+.idea .img{display:block;font-size:13px;color:var(--muted)}
+.lint{display:flex;gap:6px;flex-wrap:wrap}
+.lint span{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--ok-bg);color:var(--ok)}
+.lint span.warn{background:var(--draft-bg);color:var(--draft)}
+.check-list{margin:0;padding-left:20px;font-size:14px;border-left:3px solid var(--accent);padding-block:2px}
+.small-h{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:6px 0 4px;font-weight:500}
+.empty{color:var(--muted);font-size:15px;margin:0}
+@media (max-width:520px){.card,.idea{grid-template-columns:88px minmax(0,1fr);gap:14px}.cover b{font-size:12px}.cover i{display:none}label.check{margin-left:0}}
 @media (prefers-reduced-motion:reduce){.bar span{transition:none}}
 </style>
 <div class="wrap">
@@ -63,9 +90,38 @@ footer{font-size:13px;color:var(--muted)}
   <h1>Fila de postagem</h1>
   <p class="lede">Os 10 carrosséis na ordem sugerida de postagem, um por semana na quinta. Em cada um, abra o post no Canva para baixar as páginas e copie a legenda. As cores se alternam para a grade não repetir a mesma capa lado a lado.</p>
   <div class="progress"><div class="bar"><span id="bar"></span></div><span id="count">0 de 10 postados</span></div>
+  <nav class="jump" aria-label="Seções"><a href="#list">Fila</a><a href="#gerar">Gerar novos carrosséis</a><a href="#salvas">Ideias salvas</a></nav>
 </header>
 <ol class="list" id="list"></ol>
-<footer>A marcação "Postado" fica salva só neste navegador. Legendas marcadas como rascunho ainda não foram revisadas por você.</footer>
+<section class="gen" id="gerar" aria-labelledby="gen-h">
+  <div>
+    <span class="eyebrow">Novos carrosséis</span>
+    <h2 class="h-sec" id="gen-h">Gerar no mesmo estilo</h2>
+  </div>
+  <p class="lede">Cada ideia sai com capa, páginas (com as que levam imagem), fecho, legenda, fontes e a lista do que conferir. Salve as que você gostar. Depois, é só me pedir "monte as ideias salvas" que eu crio no Canva com o mesmo modelo dos outros 10.</p>
+  <div class="gen-controls">
+    <div class="row">
+      <button class="btn primary" id="btn-random" type="button">Gerar 3 com temas aleatórios</button>
+    </div>
+    <form id="form-pedido">
+      <label for="pedido">Ou descreva o que você quer</label>
+      <textarea id="pedido" rows="3" placeholder="Ex.: a história do ícone de disquete, que ainda significa salvar"></textarea>
+      <div class="row">
+        <label for="qtd" class="sr">Quantas versões</label>
+        <select id="qtd"><option value="1">1 versão</option><option value="2">2 versões</option><option value="3">3 versões</option></select>
+        <button class="btn" type="submit" id="btn-pedido">Gerar a partir da descrição</button>
+      </div>
+    </form>
+  </div>
+  <div class="gen-status" id="gen-status" role="status" aria-live="polite"></div>
+  <p class="empty" id="gen-off" hidden>A geração só funciona com esta página aberta no claude.ai, com o uso do Claude permitido para ela.</p>
+  <div class="ideas" id="gen-out"></div>
+  <div>
+    <h2 class="h-sec" id="salvas">Ideias salvas</h2>
+  </div>
+  <div class="ideas" id="saved"><p class="empty">Carregando as ideias salvas...</p></div>
+</section>
+<footer>A marcação "Postado" fica salva só neste navegador. As ideias salvas ficam guardadas na página e eu consigo lê-las para montar no Canva. Todo fato gerado precisa ser conferido antes de postar.</footer>
 </div>
 <script>
 const POSTS = [{"id": "cadeira", "title": "A cadeira que ninguém assina", "sub": "a história da cadeira de plástico monobloco", "cor": "verde", "url": "https://www.canva.com/design/DAHaJYT5A1U/edit", "pages": 8, "ok": true, "note": "", "caption": "Ela está em quase toda barraca de praia de Fortaleza, e pouca gente sabe quem desenhou. A resposta é: muita gente.\n\nA cadeira de plástico monobloco é injetada numa peça só, em polipropileno. Por isso é leve, empilha e custa pouco.\n\nA linha do tempo: Douglas C. Simpson (1946), Joe Colombo e Vico Magistretti nos anos 60, Henry Massonnet com a Fauteuil 300 (1972). Como ninguém patenteou o desenho, qualquer fábrica pôde copiar.\n\nFontes: Wikipedia, \"Monobloc (chair)\"; exposição \"Monobloc: A Chair for the World\", Vitra Design Museum (2017).\n\nSalva pra lembrar disso na próxima vez que sentar numa.\n\n#design #designdeproduto #historiadodesign #fortaleza #monobloco"}, {"id": "bom-design", "title": "O bom design não se nota", "sub": "até o dia em que ele falta", "cor": "azul", "url": "https://www.canva.com/design/DAHaJfA0dys/edit", "pages": 7, "ok": true, "note": "", "caption": "Sabe aquela porta que você puxa e era pra empurrar? Ela tem nome: porta de Norman.\n\nO nome vem de Don Norman, autor de \"O design do dia a dia\" (1988). A ideia dele é simples: se a pessoa precisa de uma placa dizendo \"empurre\", o problema é do design, não da pessoa.\n\nBom design funciona tão bem que some. A gente só repara quando ele falta: no formulário que apaga tudo, no botão que parece clicável e não é.\n\nMe conta nos comentários: qual objeto do seu dia é tão bem desenhado que ninguém nota?\n\n#design #ux #designdeproduto #usabilidade #donnorman"}, {"id": "generico", "title": "A estética do genérico", "sub": "por que tudo feito com IA parece igual", "cor": "vermelho", "url": "https://www.canva.com/design/DAHaJS1qhbo/edit", "pages": 7, "ok": true, "note": "", "caption": "Pede pra três IAs diferentes \"um café aconchegante\" e compara. Parece que elas combinaram o resultado.\n\nNão é coincidência. Modelos de imagem geram o resultado mais provável, e o mais provável é a média de tudo o que eles já viram. A média é agradável justamente porque não incomoda ninguém.\n\nEstilo é escolha. Quando ninguém escolhe, sobra o genérico.\n\nNão é pra parar de usar IA. É pra saber que o trabalho começa onde a média termina.\n\nE você, o que no seu trabalho só você faria?\n\n#design #inteligenciaartificial #ia #designgrafico #criatividade"}, {"id": "pressa", "title": "A pressa virou interface", "sub": "tudo é feito pra você não parar", "cor": "amarelo", "url": "https://www.canva.com/design/DAHaJS3UN7Q/edit", "pages": 7, "ok": true, "note": "", "caption": "Vídeo em 2x, livro resumido em 5 minutos, resposta pronta antes da pergunta terminar. Quando foi que a pressa virou o padrão?\n\nA gente desenhou ferramentas pra economizar tempo. E usa o tempo que sobra pra consumir mais coisa rápida.\n\nA IA acelera ainda mais. Só que entender alguém, ter uma ideia própria e mudar de opinião continuam acontecendo devagar.\n\nTalvez o próximo bom design seja o que ajuda a desacelerar.\n\nE você, qual foi a última coisa que fez sem pressa?\n\n#design #tecnologia #inteligenciaartificial #comportamento #ux"}, {"id": "quem-desenhou", "title": "Quem desenhou o seu dia?", "sub": "nenhum design é neutro", "cor": "rosa", "url": "https://www.canva.com/design/DAHaJQL73tc/edit", "pages": 10, "ok": false, "note": "Antes de postar, confira a frase da página 5 sobre o TED (Wurman fundou o TED em 1984).", "caption": "O despertador, o primeiro app do dia, a ordem do feed. Tudo isso foi desenhado por alguém.\n\nQuase sempre com uma meta que não é a sua.\n\nNo design isso tem nome: arquitetura da informação. O termo ganhou força em 1976, quando o arquiteto Richard Saul Wurman o escolheu como tema de um congresso nos EUA. Em 1989 ele resumiu em 5 os jeitos de organizar informação: lugar, alfabeto, tempo, categoria e hierarquia.\n\nQuem decide a ordem decide muito do que você escolhe. Em 2016, o Instagram trocou o feed em ordem de tempo por um feed ordenado por algoritmo. Os posts eram os mesmos. Só mudou a ordem.\n\nNenhum design é neutro.\n\nE você, qual escolha do seu dia não foi sua?\n\nFontes: Richard Saul Wurman, \"Information Anxiety\" (1989); Johnson e Goldstein, \"Do Defaults Save Lives?\", Science (2003); anúncio do Instagram de março de 2016.\n\n#design #arquiteturadainformacao #ux #designdeproduto #historiadodesign"}, {"id": "todo-app", "title": "Todo app quer seu tempo", "sub": "e o design é a ferramenta pra isso", "cor": "verde", "url": "https://www.canva.com/design/DAHaJZtY1Go/edit", "pages": 7, "ok": false, "note": "", "caption": "A rolagem que não acaba, o vídeo que começa sozinho, o pontinho vermelho. Nada disso é acidente.\n\nSão decisões de design, testadas e medidas pra você ficar mais um pouco. Aza Raskin, que criou a rolagem infinita em 2006, já disse em entrevistas que se arrepende do que ela virou.\n\nO problema não é o design ser bom em prender. É medir sucesso só pelo tempo que alguém não consegue sair.\n\nUm bom design também pode te deixar ir embora.\n\nE você, qual app você abre sem nem perceber?\n\n#design #ux #tecnologia #designdeproduto #comportamento"}, {"id": "ia-concorda", "title": "A IA que concorda com tudo", "sub": "elogio demais também é um defeito", "cor": "vermelho", "url": "https://www.canva.com/design/DAHaJYu8zV0/edit", "pages": 7, "ok": false, "note": "", "caption": "Você manda um texto e a IA acha ótimo. Manda o oposto e ela também acha. Já reparou?\n\nNão é acaso. Esses modelos também aprendem com notas que pessoas dão às respostas, e a gente costuma dar nota alta pra quem concorda. Pesquisadores chamam isso de bajulação (em inglês, sycophancy).\n\nNo design, feedback que só elogia não serve. A crítica dura é a que faz o projeto melhorar.\n\nUma saída simples: pergunte o contrário. \"Onde isso está fraco?\" \"O que um cliente exigente diria?\"\n\nE você, quando foi a última vez que a IA discordou de você?\n\n#inteligenciaartificial #ia #design #engenhariadeprompt #feedback"}, {"id": "esforco", "title": "O fim do esforço visível", "sub": "quando tudo parece fácil, nada parece valioso", "cor": "azul", "url": "https://www.canva.com/design/DAHaJbIDbbs/edit", "pages": 7, "ok": false, "note": "", "caption": "Antes dava pra ver o trabalho: o rascunho, a prova de cor, a maquete. Hoje um cartaz aparece pronto em segundos.\n\nE aí vem a pergunta: \"mas isso não é só apertar um botão?\"\n\nO valor de um trabalho nunca foi só o tempo gasto. Mas o tempo era a parte que todo mundo conseguia ver. Quando o esforço some, o que sobra pra mostrar é o critério: o que você escolheu e o que recusou.\n\nTalvez o novo trabalho seja contar o processo.\n\nE você, que parte do seu trabalho ninguém vê?\n\n#design #designgrafico #processocriativo #inteligenciaartificial #criatividade"}, {"id": "cansados", "title": "Cansados de novidade", "sub": "o hype também tem prazo de validade", "cor": "amarelo", "url": "https://www.canva.com/design/DAHaJeNHQcc/edit", "pages": 7, "ok": false, "note": "", "caption": "Toda semana sai uma ferramenta que \"muda tudo\". Na semana seguinte, outra muda tudo de novo.\n\nNo começo era empolgante. Agora parece uma esteira: você corre só pra continuar no mesmo lugar.\n\nEsse cansaço não é preguiça. É perceber que nem toda novidade é uma melhoria. Uma ferramenta nova não resolve um problema que você ainda não entendeu.\n\nTudo bem não testar tudo. Escolher o que ignorar também é uma forma de pensar.\n\nE você, qual novidade decidiu deixar passar?\n\n#inteligenciaartificial #ia #design #tecnologia #produtividade"}, {"id": "designer", "title": "O designer não vai acabar", "sub": "mas o designer que só executa, talvez", "cor": "rosa", "url": "https://www.canva.com/design/DAHaJSf3liU/edit", "pages": 7, "ok": false, "note": "", "caption": "Toda semana alguém anuncia o fim do designer. E toda semana alguém ainda precisa decidir o que vale a pena desenhar.\n\nA IA ficou ótima no \"como\": gera tela, logo e variação em segundos. O \"por quê\" continua sendo trabalho de gente. Pra quem é isso? O que essa pessoa precisa? O que fica de fora?\n\nA parte de só executar ficou barata. A parte de entender, perguntar e decidir sempre foi o design de verdade.\n\nNão tô dizendo que ninguém vai perder trabalho. Tô dizendo que o trabalho mudou de lugar.\n\nE você, hoje passa mais tempo executando ou decidindo?\n\n#design #designer #inteligenciaartificial #carreira #uxdesign"}];
@@ -128,4 +184,243 @@ function openFromHash(){
 }
 window.addEventListener("hashchange", openFromHash);
 openFromHash();
+
+/* ---------- Gerar novos carrosséis ---------- */
+const CORES = ["verde", "vermelho", "azul", "rosa", "amarelo"];
+const TERRITORIOS = [
+  "um objeto do dia a dia e quem o desenhou",
+  "um capítulo da história do design gráfico",
+  "design brasileiro: uma pessoa, marca ou movimento",
+  "design no Nordeste e em Fortaleza (comércio, festas, praia, ruas)",
+  "tipografia e letreiros",
+  "uma interface ou app que quase todo mundo usa",
+  "padrões de interface que manipulam (dark patterns)",
+  "IA, autoria e criatividade",
+  "cor e percepção",
+  "sinalização, mapas e cidades",
+  "embalagens e marcas",
+  "acessibilidade e design para todo mundo",
+  "ícones e símbolos que viraram linguagem",
+  "um erro de design famoso e o que ele ensinou",
+  "o processo e as ferramentas do designer, ontem e hoje",
+  "arquitetura e espaço público"
+];
+const REFERENCIA = {
+  titulo: "A cadeira que ninguém assina", subtitulo: "a história da cadeira de plástico monobloco", cor: "verde",
+  paginas: [
+    { texto: "Da barraca de praia em Fortaleza ao bar da esquina. O nome dela é monobloco: sai inteira de um molde só, em plástico injetado.", imagem: "foto real de cadeiras brancas de plástico empilhadas numa barraca de praia" },
+    { texto: "Repara no próximo bar em que você sentar: a cadeira é quase sempre a mesma. Ela está em todo lugar e, por isso, ninguém mais vê. Mas alguém teve que inventar.", imagem: "" },
+    { texto: "1946. O canadense Douglas C. Simpson desenha uma das primeiras cadeiras de plástico feitas numa peça só. A ideia existia; faltava conseguir fabricar barato.", imagem: "" },
+    { texto: "Anos 1960. Joe Colombo lança a Universale (1965) e Vico Magistretti, a Selene (1967), as duas pela Kartell. O plástico vira assunto de design.", imagem: "foto das cadeiras Universale e Selene" },
+    { texto: "1972. O engenheiro francês Henry Massonnet cria a Fauteuil 300, muitas vezes apontada como a primeira monobloco. Nos anos 70, Allibert e Grosfillex levam o modelo à escala.", imagem: "" },
+    { texto: "Ninguém registrou patente do desenho. Qualquer fábrica podia copiar, e copiou: só na Europa, cerca de 1 bilhão foram vendidas.", imagem: "" }
+  ],
+  fecho: "E você, sabia de onde veio a cadeira da praia?"
+};
+const REGRAS = `Você escreve carrosséis de Instagram para a @studiodito.co, do designer Espedito Roza (Dito), de Fortaleza. O público são designers, estudantes de design e criativos curiosos sobre IA, cansados de hype.
+
+Tom: reflexivo, crítico e acessível. Nunca arrogante, nunca catastrofista, sem hype de IA. O movimento típico sai de algo banal do dia a dia e chega numa ideia de design.
+
+Regras de estilo, aprendidas com os carrosséis que o Dito aprovou:
+- Informativo antes de opinativo: fatos concretos, com nomes, datas, empresas e lugares. Linha do tempo funciona bem ("1946. ...").
+- Nunca invente fato. Use só o que você sabe com segurança. Todo nome, data, número ou citação usado entra também na lista "conferir", escrito como uma afirmação curta que o Dito vai checar antes de postar. Na dúvida sobre um número, não use número.
+- Sem autopropaganda: nada de "nesta série", "me segue", "vou mostrar", "salva esse post".
+- Pouco texto: no máximo 35 palavras por página interna. Português do Brasil falado ("pra", "a gente"), frases curtas.
+- Nunca use travessão (—). Use vírgula, ponto ou dois-pontos.
+- Não invente vivências do Dito (aulas, clientes, números dele).
+
+Estrutura de cada carrossel:
+- titulo: título-tese de até 5 palavras (vai em caixa alta na capa).
+- subtitulo: uma linha em minúsculas que vira o jogo.
+- paginas: de 6 a 8 páginas internas. A primeira traz uma cena que o leitor reconhece e desperta curiosidade. Pelo menos 2 páginas têm uma imagem ocupando uma faixa da página: descreva a imagem em "imagem" (diga se deve ser foto real); nas outras, "imagem" fica "".
+- fecho: pergunta simples começando com "E você,".
+- legenda: a primeira linha tem até 120 caracteres e funciona sozinha antes do "... mais"; depois, 2 ou 3 parágrafos curtos com o contexto e os fatos; depois, a mesma pergunta do fecho; se houver fatos, uma linha "Fontes: ..."; por fim, 5 hashtags em português, minúsculas e sem acento. Separe os parágrafos com linha em branco.
+- fontes: as referências que sustentam os fatos (livro, artigo, museu, site). Lista vazia se não houver fato.
+- conferir: as afirmações a checar.
+- cor: uma de verde, vermelho, azul, rosa, amarelo.
+- tema: o assunto em poucas palavras.
+
+Exemplo de carrossel aprovado (só as páginas, para calibrar tom e densidade):
+${JSON.stringify(REFERENCIA)}`;
+const FORMATO = `Responda só com JSON, neste formato:
+{"carrosseis":[{"tema":"...","titulo":"...","subtitulo":"...","cor":"verde","paginas":[{"texto":"...","imagem":""}],"fecho":"E você, ...?","legenda":"...","fontes":["..."],"conferir":["..."]}]}`;
+
+const out = document.getElementById("gen-out");
+const statusEl = document.getElementById("gen-status");
+const savedEl = document.getElementById("saved");
+const btnRandom = document.getElementById("btn-random");
+const btnPedido = document.getElementById("btn-pedido");
+const form = document.getElementById("form-pedido");
+const pedidoEl = document.getElementById("pedido");
+let sample = null, db = null, ctl = null, saved = [];
+
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function shuffle(a){ const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; }
+function existingTitles(){ return POSTS.map(p => p.title).concat(saved.map(s => s.data.titulo)).filter(Boolean); }
+
+function lint(c){
+  const checks = [];
+  const words = (c.paginas || []).map(p => String(p.texto || "").split(/\s+/).filter(Boolean).length);
+  const maxW = Math.max(0, ...words);
+  checks.push([`até ${maxW} palavras por página`, maxW <= 35]);
+  const imgs = (c.paginas || []).filter(p => String(p.imagem || "").trim()).length;
+  checks.push([`${imgs} página${imgs === 1 ? "" : "s"} com imagem`, imgs >= 2]);
+  const first = String(c.legenda || "").split("\n")[0];
+  checks.push([`1ª linha da legenda: ${first.length} caracteres`, first.length <= 125]);
+  const tags = (String(c.legenda || "").match(/#[\p{L}\d_]+/gu) || []).length;
+  checks.push([`${tags} hashtags`, tags >= 3 && tags <= 5]);
+  const all = [c.titulo, c.subtitulo, c.fecho, c.legenda, ...(c.paginas || []).map(p => p.texto)].join(" ");
+  if (all.includes("—")) checks.push(["tem travessão", false]);
+  return checks;
+}
+
+function ideaCard(c, opts){
+  const cor = CORES.includes(c.cor) ? c.cor : "azul";
+  const card = el("article", "idea");
+  const cover = el("div", "cover c-" + cor); cover.setAttribute("aria-hidden", "true");
+  cover.append(el("b", null, c.titulo || ""), el("i", null, c.subtitulo || ""));
+  const info = el("div", "info");
+  const meta = el("div", "meta");
+  meta.append(el("span", null, `${cor} · ${(c.paginas || []).length + 2} páginas${c.tema ? " · " + c.tema : ""}`));
+  if (opts.badge) meta.append(el("span", "chip draft", opts.badge));
+  info.append(el("h4", null, c.titulo || "Sem título"), el("p", "sub", c.subtitulo || ""), meta);
+  const lintBox = el("div", "lint");
+  for (const [label, ok] of lint(c)) lintBox.append(el("span", ok ? "" : "warn", label));
+  info.append(lintBox);
+
+  const dPages = el("details"); dPages.append(el("summary", null, "Páginas"));
+  const ol = el("ol", "pages");
+  const li1 = el("li"); li1.append(el("strong", null, "Capa: " + String(c.titulo || "").toUpperCase()), el("span", "img", c.subtitulo || "")); ol.append(li1);
+  for (const p of c.paginas || []) {
+    const li = el("li", null, p.texto || "");
+    if (String(p.imagem || "").trim()) li.append(el("span", "img", "Imagem: " + p.imagem));
+    ol.append(li);
+  }
+  const liF = el("li"); liF.append(el("strong", null, c.fecho || ""), el("span", "img", "studiodito.co")); ol.append(liF);
+  dPages.append(ol); info.append(dPages);
+
+  const dLeg = el("details"); dLeg.append(el("summary", null, "Legenda"));
+  const cap = el("div", "caption", c.legenda || ""); dLeg.append(cap);
+  const copy = el("button", "btn", "Copiar legenda"); copy.type = "button";
+  copy.onclick = () => {
+    const done = () => { copy.textContent = "Copiada"; setTimeout(() => copy.textContent = "Copiar legenda", 1800); };
+    const fb = () => { const r = document.createRange(); r.selectNodeContents(cap); const s = getSelection(); s.removeAllRanges(); s.addRange(r); copy.textContent = "Texto selecionado: copie com Ctrl+C"; };
+    try { navigator.clipboard.writeText(c.legenda || "").then(done, fb); } catch (e) { fb(); }
+  };
+  const caprow = el("div", "caprow"); caprow.append(copy); dLeg.append(caprow); info.append(dLeg);
+
+  if ((c.conferir || []).length) {
+    info.append(el("p", "small-h", "Conferir antes de postar"));
+    const ul = el("ul", "check-list"); for (const f of c.conferir) ul.append(el("li", null, f)); info.append(ul);
+  }
+  if ((c.fontes || []).length) {
+    info.append(el("p", "small-h", "Fontes sugeridas"));
+    const ul = el("ul", "check-list"); for (const f of c.fontes) ul.append(el("li", null, f)); info.append(ul);
+  }
+  const actions = el("div", "actions");
+  for (const a of opts.actions) actions.append(a);
+  info.append(actions);
+  card.append(cover, info);
+  return card;
+}
+
+function saveButton(c, origem){
+  const b = el("button", "btn primary", "Salvar para montar no Canva"); b.type = "button";
+  if (!db) { b.disabled = true; b.title = "Salvar não está disponível nesta visualização"; }
+  b.onclick = async () => {
+    b.disabled = true; b.textContent = "Salvando...";
+    try {
+      await db.collection("ideias").add({ ...c, origem, status: "para montar", criadoEm: new Date().toISOString() });
+      b.textContent = "Salva";
+    } catch (e) { b.disabled = false; b.textContent = "Não salvou. Tentar de novo"; }
+  };
+  return b;
+}
+
+function removeButton(id){
+  const b = el("button", "btn", "Remover"); b.type = "button"; let armed = false;
+  b.onclick = async () => {
+    if (!armed) { armed = true; b.textContent = "Confirmar remoção"; setTimeout(() => { armed = false; if (b.isConnected && !b.disabled) b.textContent = "Remover"; }, 4000); return; }
+    b.disabled = true; b.textContent = "Removendo...";
+    try { await db.collection("ideias").doc(id).delete(); } catch (e) { b.disabled = false; b.textContent = "Não removeu. Tentar de novo"; armed = false; }
+  };
+  return b;
+}
+
+function setBusy(busy, msg){
+  btnRandom.disabled = busy || !sample; btnPedido.disabled = busy || !sample;
+  statusEl.replaceChildren();
+  if (msg) statusEl.append(el("span", null, msg));
+  if (busy) { const stop = el("button", "btn", "Parar"); stop.type = "button"; stop.onclick = () => ctl?.abort(); statusEl.append(stop); }
+}
+function showError(code){
+  const map = {
+    not_granted: "O uso do Claude não foi permitido para esta página. Libere no menu de permissões do artefato.",
+    sampling_disabled: "O Claude não está disponível para esta conta.",
+    rate_limited: "Muitos pedidos seguidos ou limite de uso atingido. Espere um pouco e tente de novo.",
+    session_expired: "Sua sessão expirou. Entre de novo no claude.ai.",
+    invalid_json: "A resposta veio fora do formato. Clique de novo para gerar outra.",
+    refused: "O pedido foi recusado. Reescreva a descrição e tente de novo.",
+    prompt_too_large: "A descrição ficou longa demais. Encurte e tente de novo."
+  };
+  statusEl.replaceChildren(el("span", "err", map[code] || "Não deu para gerar agora. Tente de novo em instantes."));
+  if (["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed"].includes(code)) {
+    sample = null; btnRandom.disabled = true; btnPedido.disabled = true; document.getElementById("gen-off").hidden = false;
+  }
+}
+
+async function gerar(pedido, origem){
+  ctl = new AbortController();
+  setBusy(true, "Escrevendo... isso leva de 30 segundos a 2 minutos.");
+  const prompt = `${REGRAS}\n\nTítulos que já existem e não podem se repetir: ${existingTitles().join("; ")}.\n\nPedido: ${pedido}\n\n${FORMATO}`;
+  try {
+    let chars = 0;
+    const res = await sample.json(prompt, {
+      signal: ctl.signal, cache: false, modelTier: "complex",
+      onText: ({ text }) => { if (text.length - chars > 400) { chars = text.length; statusEl.firstChild.textContent = `Escrevendo... ${Math.round(chars / 100) / 10} mil caracteres até agora.`; } }
+    });
+    const list = Array.isArray(res?.carrosseis) ? res.carrosseis.filter(c => c && c.titulo && Array.isArray(c.paginas)) : [];
+    if (!list.length) { showError("invalid_json"); return; }
+    out.replaceChildren(...list.map(c => ideaCard(c, { badge: "Nova", actions: [saveButton(c, origem)] })));
+    setBusy(false, `${list.length} ${list.length === 1 ? "ideia pronta" : "ideias prontas"}. Salve as que quiser montar no Canva.`);
+  } catch (e) {
+    setBusy(false, "");
+    if (e?.code !== "cancelled") showError(e?.code);
+    else statusEl.replaceChildren(el("span", null, "Geração interrompida."));
+  }
+}
+
+btnRandom.onclick = () => {
+  const temas = shuffle(TERRITORIOS).slice(0, 3);
+  const cores = shuffle(CORES).slice(0, 3);
+  gerar(`Crie 3 carrosséis diferentes, um para cada território: 1) ${temas[0]}; 2) ${temas[1]}; 3) ${temas[2]}. Dentro de cada território, escolha você um assunto específico e pouco óbvio. Use as cores ${cores.join(", ")}, nessa ordem.`, "aleatório: " + temas.join(" | "));
+};
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const txt = pedidoEl.value.trim();
+  if (!txt) { statusEl.replaceChildren(el("span", "err", "Escreva o que você quer antes de gerar.")); pedidoEl.focus(); return; }
+  const n = Number(document.getElementById("qtd").value) || 1;
+  gerar(`Crie ${n} ${n === 1 ? "carrossel" : "versões diferentes de carrossel (ângulos diferentes, cores diferentes)"} a partir desta descrição do Dito: """${txt.slice(0, 4000)}"""`, "pedido: " + txt.slice(0, 500));
+});
+
+function renderSaved(){
+  if (!db) { savedEl.replaceChildren(el("p", "empty", "As ideias salvas só aparecem com a página aberta no claude.ai.")); return; }
+  if (!saved.length) { savedEl.replaceChildren(el("p", "empty", "Nenhuma ideia salva ainda. Gere acima e clique em \"Salvar para montar no Canva\".")); return; }
+  savedEl.replaceChildren(...saved.map(s => ideaCard(s.data, { badge: s.data.status === "montado" ? "Montado no Canva" : "Para montar no Canva", actions: [removeButton(s.id)] })));
+}
+
+(async () => {
+  btnRandom.disabled = true; btnPedido.disabled = true;
+  const [s, d] = await Promise.all([window.claude?.use?.("sample") ?? null, window.claude?.use?.("db") ?? null].map(p => Promise.resolve(p).catch(() => null)));
+  sample = s; db = d;
+  if (!sample) document.getElementById("gen-off").hidden = false;
+  btnRandom.disabled = !sample; btnPedido.disabled = !sample;
+  if (!db) { renderSaved(); return; }
+  const timer = setTimeout(() => { if (!saved.length) savedEl.replaceChildren(el("p", "empty", "Ainda não deu para carregar as ideias salvas. Elas aparecem assim que a conexão responder.")); }, 10000);
+  db.collection("ideias").orderBy("criadoEm", "desc").onSnapshot(snap => {
+    if (!snap.metadata.fromCache) clearTimeout(timer);
+    saved = snap.docs.map(d => ({ id: d.id, data: d.data() }));
+    renderSaved();
+  }, () => { clearTimeout(timer); savedEl.replaceChildren(el("p", "empty", "Não deu para carregar as ideias salvas agora.")); });
+})();
 </script>
