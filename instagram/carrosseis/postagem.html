@@ -83,6 +83,8 @@ textarea,select{font:inherit;font-size:15px;color:var(--fg);background:var(--bg)
 .empty{color:var(--muted);font-size:15px;margin:0}
 .build{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:12px}
 .build-msg{margin:0;font-size:15px}
+.review-list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.review-list .good{color:var(--ok)} .review-list .bad{color:var(--accent)} .review-list .warn{color:var(--draft)} .review-list .fix{color:var(--muted)}
 .build-msg.err{color:var(--accent)}
 .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
 .thumbs img{width:100%;max-width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
@@ -238,7 +240,7 @@ Regras de estilo, aprendidas com os carrosséis que o Dito aprovou:
 Estrutura de cada carrossel:
 - titulo: título-tese de até 5 palavras (vai em caixa alta na capa).
 - subtitulo: uma linha em minúsculas que vira o jogo.
-- paginas: EXATAMENTE 5 páginas internas, na ordem fixa do modelo do Canva. Página 1: com imagem, texto de até 28 palavras, uma cena que o leitor reconhece e que desperta curiosidade. Página 2: só texto, até 35 palavras. Página 3: com imagem, texto de até 28 palavras. Páginas 4 e 5: só texto, até 35 palavras. Nas páginas com imagem, descreva em "imagem" uma fotografia editorial que ilustre a página (cena concreta, sem texto escrito na imagem); nas outras, "imagem" fica "".
+- paginas: as páginas internas, entre a capa e o fecho. Se o pedido disser um número de páginas, esse número é o total do carrossel contando capa e fecho: faça esse total menos 2 páginas internas. Sem número no pedido, faça 5 páginas internas. Mínimo 2 e máximo 10 internas. A primeira interna sempre tem imagem e traz uma cena que o leitor reconhece, que desperta curiosidade; depois, mais ou menos 1 página com imagem a cada 2. Página com imagem: texto de até 28 palavras e, em "imagem", a descrição de uma fotografia editorial que ilustre a página (cena concreta, sem texto escrito na imagem). Página só de texto: até 35 palavras e "imagem" vazio.
 - fecho: pergunta simples começando com "E você,".
 - legenda: a primeira linha tem até 120 caracteres e funciona sozinha antes do "... mais"; depois, 2 ou 3 parágrafos curtos com o contexto e os fatos; depois, a mesma pergunta do fecho; se houver fatos, uma linha "Fontes: ..."; por fim, 5 hashtags em português, minúsculas e sem acento. Separe os parágrafos com linha em branco.
 - fontes: as referências que sustentam os fatos (livro, artigo, museu, site). Lista vazia se não houver fato.
@@ -266,10 +268,9 @@ function existingTitles(){ return POSTS.map(p => p.title).concat(saved.map(s => 
 
 function lint(c){
   const checks = [];
-  const words = (c.paginas || []).map(p => String(p.texto || "").split(/\s+/).filter(Boolean).length);
-  const maxW = Math.max(0, ...words);
-  checks.push([`até ${maxW} palavras por página`, maxW <= 35]);
-  checks.push([`${(c.paginas || []).length} páginas internas`, fitsTemplate(c)]);
+  const longas = (c.paginas || []).filter(p => String(p.texto || "").split(/\s+/).filter(Boolean).length > (temImagem(p) ? 28 : 35)).length;
+  checks.push([longas ? `${longas} página${longas === 1 ? "" : "s"} com texto longo` : "textos no tamanho", !longas]);
+  checks.push([`${(c.paginas || []).length + 2} páginas no total`, fitsTemplate(c)]);
   const first = String(c.legenda || "").split("\n")[0];
   checks.push([`1ª linha da legenda: ${first.length} caracteres`, first.length <= 125]);
   const tags = (String(c.legenda || "").match(/#[\p{L}\d_]+/gu) || []).length;
@@ -343,11 +344,11 @@ function saveButton(c, origem){
 }
 
 function removeButton(id){
-  const b = el("button", "btn", "Remover"); b.type = "button"; let armed = false;
+  const b = el("button", "btn", "Excluir ideia"); b.type = "button"; let armed = false;
   b.onclick = async () => {
-    if (!armed) { armed = true; b.textContent = "Confirmar remoção"; setTimeout(() => { armed = false; if (b.isConnected && !b.disabled) b.textContent = "Remover"; }, 4000); return; }
-    b.disabled = true; b.textContent = "Removendo...";
-    try { await db.collection("ideias").doc(id).delete(); } catch (e) { b.disabled = false; b.textContent = "Não removeu. Tentar de novo"; armed = false; }
+    if (!armed) { armed = true; b.textContent = "Clique de novo para excluir"; setTimeout(() => { armed = false; if (b.isConnected && !b.disabled) b.textContent = "Excluir ideia"; }, 4000); return; }
+    b.disabled = true; b.textContent = "Excluindo...";
+    try { await db.collection("ideias").doc(id).delete(); } catch (e) { b.disabled = false; b.textContent = "Não excluiu. Tentar de novo"; armed = false; }
   };
   return b;
 }
@@ -418,9 +419,10 @@ const CREME = "#FDF0D5", TINTA = "#1E1E1C";
 let mcp = null, building = false;
 const builds = {};
 
+function temImagem(p){ return !!String(p?.imagem || "").trim(); }
 function fitsTemplate(c){
   const p = c.paginas || [];
-  return p.length === 5 && !!String(p[0]?.imagem || "").trim() && !!String(p[2]?.imagem || "").trim();
+  return p.length >= 2 && p.length <= 10 && p.some(temImagem);
 }
 function titleLines(t){
   const words = String(t).trim().split(/\s+/); const lines = []; let cur = "";
@@ -477,56 +479,147 @@ function mainText(page){
     .filter(o => o.t && o.t !== "studiodito.co" && !/^\d\d\/\d\d$/.test(o.t));
 }
 
+const normTxt = t => String(t || "").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/\s+/g, " ").trim();
+function verificarPagina(page, exp, n){
+  const issues = [], overflow = [];
+  if (!page) return { issues: [{ page: n, msg: "não deu para conferir esta página automaticamente" }], overflow };
+  const byLoc = loc => (page.elements || []).find(e => e.locator_id === loc);
+  for (const t of exp.texts) {
+    const e = byLoc(t.loc); const got = e ? (e.textRegions || []).map(r => r.characters).join("") : null;
+    if (got == null || normTxt(got) !== normTxt(t.text)) issues.push({ page: n, msg: `o ${t.label} não ficou igual ao da ideia` });
+  }
+  for (const f of exp.fills) {
+    const got = f.page ? page.background?.media?.mediaId : byLoc(f.loc)?.fill?.media?.mediaId;
+    if (got !== f.media) issues.push({ page: n, msg: `${f.label} não foi aplicado` });
+  }
+  for (const cl of exp.colors) {
+    const got = String(byLoc(cl.loc)?.textRegions?.[0]?.formatting?.color || "").toLowerCase();
+    if (got && got !== cl.color.toLowerCase()) issues.push({ page: n, msg: "a cor do texto não ficou certa" });
+  }
+  for (const b of exp.bounds) {
+    const e = byLoc(b.loc); if (!e) continue;
+    if (e.top + e.height > b.maxBottom) {
+      overflow.push({ loc: b.loc, size: e.textRegions?.[0]?.formatting?.fontSize || 52 });
+      issues.push({ page: n, msg: b.label });
+    }
+  }
+  return { issues, overflow };
+}
+function loadImg(src){ return new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = src; }); }
+async function folhaDeContato(previews){
+  const cols = 4, w = 270, h = 360, gap = 12, rows = Math.ceil(previews.length / cols);
+  const cv = document.createElement("canvas"); cv.width = cols * w + (cols + 1) * gap; cv.height = rows * (h + 34) + gap;
+  const ctx = cv.getContext("2d"); ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, cv.width, cv.height);
+  ctx.fillStyle = "#000000"; ctx.font = "bold 22px sans-serif";
+  for (let i = 0; i < previews.length; i++) {
+    const x = gap + (i % cols) * (w + gap), y = gap + Math.floor(i / cols) * (h + 34);
+    ctx.fillText(`Página ${i + 1}`, x, y + 22);
+    if (previews[i]) { try { ctx.drawImage(await loadImg(previews[i]), x, y + 30, w, h); } catch (e) {} }
+  }
+  return await new Promise(res => cv.toBlob(res, "image/png"));
+}
+async function revisaoVisual(c, previews){
+  if (!sample) return { skipped: "a revisão visual precisa do Claude liberado nesta página" };
+  if (!previews.some(Boolean)) return { skipped: "o Canva não devolveu as prévias das páginas" };
+  const lim = await sample.limits().catch(() => null);
+  if (!lim?.images) return { skipped: "esta visualização não consegue enviar imagens para o Claude" };
+  try {
+    const blob = await folhaDeContato(previews);
+    const esperado = { capa: { titulo: c.titulo, subtitulo: c.subtitulo, cor: c.cor }, paginas: (c.paginas || []).map((p, i) => ({ pagina: i + 2, texto: p.texto, imagem: p.imagem || null })), fecho: { pagina: (c.paginas || []).length + 2, texto: c.fecho } };
+    const res = await sample.json(`Você revisa um carrossel de Instagram montado no Canva antes de ele ser salvo. A imagem anexada mostra as ${previews.length} páginas em ordem, da esquerda para a direita e de cima para baixo, cada uma com o número em cima.
+
+Conteúdo que cada página deveria ter:
+${JSON.stringify(esperado)}
+
+Confira, página por página:
+- texto cortado, saindo da página ou sobreposto à foto, ao rodapé "studiodito.co" ou à numeração;
+- texto difícil de ler por causa do contraste com o fundo;
+- foto que não combina com o texto da página, que tem palavras escritas ou deformações estranhas (mãos, rostos, objetos);
+- página vazia, faltando conteúdo ou ainda com texto de outro carrossel;
+- erro de português no que aparece na imagem.
+Não aponte questões de gosto. Só o que precisa ser corrigido antes de postar.
+
+Responda só com JSON: {"ok": true ou false, "problemas": [{"pagina": número, "problema": "frase curta em português"}]}`, { images: [blob], cache: false });
+    const probs = Array.isArray(res?.problemas) ? res.problemas.filter(p => p && p.problema) : [];
+    return { ok: probs.length === 0, problemas: probs };
+  } catch (e) {
+    return { skipped: e?.code === "not_granted" ? "o uso do Claude não foi permitido" : "a revisão visual não respondeu agora" };
+  }
+}
+
 async function montar(id){
   if (building || !mcp) return;
   const doc = saved.find(s => s.id === id); if (!doc) return;
   const c = doc.data;
-  if (!fitsTemplate(c)) { builds[id] = { error: "Esta ideia não tem as 5 páginas internas do modelo. Gere de novo para montar no Canva." }; renderSaved(); return; }
+  if (!fitsTemplate(c)) { builds[id] = { error: "Esta ideia precisa ter de 2 a 10 páginas internas, com pelo menos 1 imagem. Gere de novo para montar no Canva." }; renderSaved(); return; }
   building = true;
-  const st = builds[id] = { stage: "Copiando o modelo no Canva..." }; renderSaved();
+  const N = c.paginas.length + 2;
+  const pad = n => String(n).padStart(2, "0");
+  const st = builds[id] = { stage: `Criando o carrossel com ${N} páginas no Canva...` }; renderSaved();
   const step = msg => { st.stage = msg; renderSaved(); };
   try {
-    const copy = payloadOf(await canva("copy-design", { design_id: MODELO, user_intent: "Criar carrossel novo a partir do modelo" }));
-    const design = copy?.design; if (!design?.id) throw { code: "tool_error", message: "a cópia do modelo não devolveu o design" };
+    // Capa (pág. 1 do modelo), página com imagem (pág. 2), página só de texto (pág. 3) e fecho (pág. 7)
+    const seq = [1, ...c.paginas.map(p => temImagem(p) ? 2 : 3), 7];
+    const mg = payloadOf(await canva("merge-designs", { type: "create_new_design", title: "Carrossel " + c.titulo, operations: [{ type: "insert_pages", source: { type: "design", design_id: MODELO, page_numbers: seq } }], user_intent: `Criar carrossel novo de ${N} páginas a partir do modelo` }));
+    const design = mg?.job?.result?.design || mg?.design;
+    if (!design?.id) throw { code: "tool_error", message: "a montagem a partir do modelo não devolveu o design" };
     st.designId = design.id; st.url = design.urls?.edit_url || `https://www.canva.com/design/${design.id}/edit`;
-    step("Gerando as 2 imagens (leva 1 a 2 minutos)...");
-    const imgs = await Promise.allSettled([gerarImagem(c.paginas[0].imagem), gerarImagem(c.paginas[2].imagem)]);
-    const media = imgs.map(r => r.status === "fulfilled" ? r.value : null);
+    const imgIdx = c.paginas.map((p, k) => temImagem(p) ? k : -1).filter(k => k >= 0);
+    step(`Gerando ${imgIdx.length} ${imgIdx.length === 1 ? "imagem" : "imagens"} (leva 1 a 2 minutos)...`);
+    const imgs = await Promise.allSettled(imgIdx.map(k => gerarImagem(c.paginas[k].imagem)));
+    const media = {}; imgIdx.forEach((k, j) => { media[k] = imgs[j].status === "fulfilled" ? imgs[j].value : null; });
     step("Abrindo o design...");
     const rd = payloadOf(await canva("read-design", { design_id: design.id, open_transaction: true, filter: { fields: ["design_content"] }, user_intent: "Abrir o carrossel novo para preencher" }));
     const tx = rd?.transaction?.transaction_id; const pages = rd?.design_content?.pages;
-    if (!tx || !Array.isArray(pages) || pages.length !== 7) throw { code: "tool_error", message: "o modelo não tem as 7 páginas esperadas" };
+    if (!tx || !Array.isArray(pages) || pages.length !== N) throw { code: "tool_error", message: `o design novo não tem as ${N} páginas esperadas` };
     st.tx = tx;
     const cor = CORES.includes(c.cor) ? c.cor : "azul";
     const texCor = TEXTO_CLARO.includes(cor) ? CREME : TINTA;
-    const textos = [null, c.paginas[0].texto, c.paginas[1].texto, c.paginas[2].texto, c.paginas[3].texto, c.paginas[4].texto];
-    st.previews = [];
-    for (let i = 0; i < 7; i++) {
-      step(`Preenchendo a página ${i + 1} de 7...`);
+    st.previews = []; st.checks = []; st.fixes = [];
+    for (let i = 0; i < N; i++) {
+      step(`Preenchendo a página ${i + 1} de ${N}...`);
       const pg = pages[i]; const ops = []; const texts = mainText(pg);
+      const exp = { texts: [], fills: [], colors: [], bounds: [] };
       if (i === 0) {
         const [titulo, sub] = texts.slice().sort((a, b) => (b.x.textRegions[0].formatting.fontSize || 0) - (a.x.textRegions[0].formatting.fontSize || 0));
         ops.push({ type: "update_title", title: "Carrossel " + c.titulo });
         ops.push({ type: "update_fill", locator_id: pg.locator_id, asset_type: "image", asset_id: FUNDOS[cor], alt_text: "fundo" });
-        if (titulo) ops.push({ type: "find_and_replace_text", locator_id: titulo.x.locator_id, find_text: titulo.t, replace_text: titleLines(c.titulo) });
-        if (sub) ops.push({ type: "find_and_replace_text", locator_id: sub.x.locator_id, find_text: sub.t, replace_text: c.subtitulo || "" });
-        for (const o of [titulo, sub]) if (o) ops.push({ type: "format_text", locator_id: o.x.locator_id, formatting: { color: texCor } });
-      } else if (i === 6) {
+        exp.fills.push({ page: true, media: FUNDOS[cor], label: "fundo da capa" });
+        if (titulo) { ops.push({ type: "find_and_replace_text", locator_id: titulo.x.locator_id, find_text: titulo.t, replace_text: titleLines(c.titulo) }); exp.texts.push({ loc: titulo.x.locator_id, text: titleLines(c.titulo), label: "título" }); }
+        if (sub) { ops.push({ type: "find_and_replace_text", locator_id: sub.x.locator_id, find_text: sub.t, replace_text: c.subtitulo || "" }); exp.texts.push({ loc: sub.x.locator_id, text: c.subtitulo || "", label: "subtítulo" }); }
+        for (const o of [titulo, sub]) if (o) { ops.push({ type: "format_text", locator_id: o.x.locator_id, formatting: { color: texCor } }); exp.colors.push({ loc: o.x.locator_id, color: texCor }); }
+        if (titulo && sub) exp.bounds.push({ loc: titulo.x.locator_id, maxBottom: sub.x.top - 12, label: "título encostando no subtítulo" });
+      } else if (i === N - 1) {
         ops.push({ type: "update_fill", locator_id: pg.locator_id, asset_type: "image", asset_id: FUNDOS[cor], alt_text: "fundo" });
+        exp.fills.push({ page: true, media: FUNDOS[cor], label: "fundo do fecho" });
         const q = texts[0];
-        if (q) ops.push({ type: "find_and_replace_text", locator_id: q.x.locator_id, find_text: q.t, replace_text: c.fecho || "" });
-        for (const x of (pg.elements || []).filter(x => x.type === "text")) ops.push({ type: "format_text", locator_id: x.locator_id, formatting: { color: texCor } });
+        if (q) { ops.push({ type: "find_and_replace_text", locator_id: q.x.locator_id, find_text: q.t, replace_text: c.fecho || "" }); exp.texts.push({ loc: q.x.locator_id, text: c.fecho || "", label: "pergunta do fecho" }); exp.bounds.push({ loc: q.x.locator_id, maxBottom: 1240, label: "pergunta encostando no studiodito.co" }); }
+        for (const x of (pg.elements || []).filter(x => x.type === "text")) { ops.push({ type: "format_text", locator_id: x.locator_id, formatting: { color: texCor } }); exp.colors.push({ loc: x.locator_id, color: texCor }); }
       } else {
-        const t = texts[0];
-        if (t) ops.push({ type: "find_and_replace_text", locator_id: t.x.locator_id, find_text: t.t, replace_text: textos[i] || "" });
+        const k = i - 1; const t = texts[0];
         const rect = (pg.elements || []).find(x => x.type === "rect");
-        const mi = i === 1 ? media[0] : i === 3 ? media[1] : null;
-        if (rect && mi) ops.push({ type: "update_fill", locator_id: rect.locator_id, asset_type: "image", asset_id: mi, alt_text: String(c.paginas[i === 1 ? 0 : 2].imagem).slice(0, 240) });
+        const num = (pg.elements || []).filter(x => x.type === "text").find(x => /^\d\d\/\d\d$/.test((x.textRegions || []).map(r => r.characters).join("")));
+        if (num) { const cur = num.textRegions.map(r => r.characters).join(""); const want = `${pad(i + 1)}/${pad(N)}`; if (cur !== want) ops.push({ type: "find_and_replace_text", locator_id: num.locator_id, find_text: cur, replace_text: want }); exp.texts.push({ loc: num.locator_id, text: want, label: "numeração" }); }
+        if (t) { ops.push({ type: "find_and_replace_text", locator_id: t.x.locator_id, find_text: t.t, replace_text: c.paginas[k].texto || "" }); exp.texts.push({ loc: t.x.locator_id, text: c.paginas[k].texto || "", label: "texto" }); exp.bounds.push({ loc: t.x.locator_id, maxBottom: rect ? rect.top - 20 : 1270, label: rect ? "texto encostando na imagem" : "texto encostando no rodapé" }); }
+        const mi = media[k];
+        if (rect && mi) { ops.push({ type: "update_fill", locator_id: rect.locator_id, asset_type: "image", asset_id: mi, alt_text: String(c.paginas[k].imagem).slice(0, 240) }); exp.fills.push({ loc: rect.locator_id, media: mi, label: "imagem" }); }
+        else if (rect) st.checks.push({ ok: false, page: i + 1, msg: "a imagem não foi gerada; a foto do modelo continua no lugar" });
       }
-      const r = await canva("edit-design", { transaction_id: tx, page_index: i + 1, finalize: "keep_open", operations: ops, user_intent: "Preencher página do carrossel novo" });
+      let r = await canva("edit-design", { transaction_id: tx, page_index: i + 1, finalize: "keep_open", operations: ops, user_intent: "Preencher página do carrossel novo" });
+      // Conferência automática da página, com até 3 ajustes de tamanho de fonte quando o texto não cabe
+      for (let tries = 0; ; tries++) {
+        const res = verificarPagina(payloadOf(r)?.document?.page, exp, i + 1);
+        if (!res.overflow.length || tries >= 3) { st.checks.push(...res.issues); break; }
+        step(`Ajustando o tamanho do texto da página ${i + 1}...`);
+        const fixOps = res.overflow.map(o => ({ type: "format_text", locator_id: o.loc, formatting: { font_size: Math.max(20, Math.floor(o.size * 0.88)) } }));
+        r = await canva("edit-design", { transaction_id: tx, page_index: i + 1, finalize: "keep_open", operations: fixOps, user_intent: "Diminuir fonte para o texto caber na página" });
+        st.fixes.push(`Página ${i + 1}: diminuí a fonte para o texto caber.`);
+      }
       st.previews.push(previewOf(r));
     }
-    st.missingImg = media.filter(m => !m).length;
+    st.missingImg = Object.values(media).filter(m => !m).length;
+    step(`Revisando as ${N} páginas...`);
+    st.review = await revisaoVisual(c, st.previews);
     st.stage = null; st.ready = true; renderSaved();
   } catch (e) {
     st.stage = null; st.error = canvaError(e) + (st.designId ? " Uma cópia do modelo ficou no seu Canva e pode ser apagada." : ""); renderSaved();
@@ -557,12 +650,24 @@ function buildPanel(id){
   if (st.stage) box.append(el("p", "build-msg", st.stage));
   if (st.error) box.append(el("p", "build-msg err", st.error));
   if (st.ready) {
-    box.append(el("p", "build-msg", "Confira as páginas. Nada foi salvo no Canva ainda." + (st.missingImg ? ` ${st.missingImg} imagem não foi gerada: troque no Canva depois de salvar.` : "")));
+    const probs = (st.checks || []).map(x => `Página ${x.page}: ${x.msg}.`);
+    if (st.review?.problemas) for (const p of st.review.problemas) probs.push(`Página ${p.pagina}: ${p.problema}`);
+    const rev = el("div", "review");
+    rev.append(el("p", "small-h", "Revisão antes de salvar"));
+    const ul = el("ul", "review-list");
+    ul.append(el("li", probs.length ? "bad" : "good", probs.length ? `${probs.length} ${probs.length === 1 ? "ponto para corrigir" : "pontos para corrigir"}` : "Textos, cores, imagens e espaçamento conferidos: tudo certo."));
+    for (const p of probs) ul.append(el("li", "bad", p));
+    for (const f of st.fixes || []) ul.append(el("li", "fix", f));
+    if (st.review?.skipped) ul.append(el("li", "warn", "Revisão visual não feita: " + st.review.skipped + ". Confira as prévias abaixo."));
+    else if (st.review?.ok) ul.append(el("li", "good", "Revisão visual do Claude: nenhuma página com problema."));
+    rev.append(ul); box.append(rev);
+    box.append(el("p", "build-msg", "Nada foi salvo no Canva ainda." + (probs.length ? " Você pode descartar e montar de novo, ou salvar e corrigir esses pontos no Canva." : "")));
     const grid = el("div", "thumbs");
     st.previews.forEach((src, i) => { if (src) { const im = el("img"); im.src = src; im.alt = `Página ${i + 1}`; grid.append(im); } else grid.append(el("span", "nothumb", `Página ${i + 1}: sem prévia`)); });
     box.append(grid);
     const row = el("div", "actions");
-    const ok = el("button", "btn primary", "Salvar no Canva"); ok.type = "button"; ok.onclick = () => finalizar(id, true);
+    const temProb = (st.checks || []).length || (st.review?.problemas || []).length;
+    const ok = el("button", "btn primary", temProb ? "Salvar mesmo assim" : "Salvar no Canva"); ok.type = "button"; ok.onclick = () => finalizar(id, true);
     const no = el("button", "btn", "Descartar"); no.type = "button"; no.onclick = () => finalizar(id, false);
     row.append(ok, no); box.append(row);
   }
