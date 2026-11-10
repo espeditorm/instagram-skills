@@ -1,95 +1,119 @@
 # Temas para Reels animados · @studiodito.co
 
-Reels animados, sem rosto, que complementam os Reels falados para a câmera
-(feitos na outra conversa). Formato: 9:16, 15 a 30 segundos, texto na tela e
-narração opcional, na paleta da conta (verde #386641, vermelho #C1121F, creme
-#FDF0D5, azul #669BBC, rosa #FF006E, amarelo #FFBE0B).
+Versão 2 (10/11/2026). A primeira lista (leis do design, ícones, ilusões) foi
+descartada: era didática demais. A referência agora é a curiosidade dos vídeos
+do Kurzgesagt.
 
-## Por que animação funciona aqui
+## O que pegar da referência (e o que não pegar)
 
-- **Design se explica melhor mostrando do que falando.** Um botão que muda de
-  tamanho ensina a Lei de Fitts em 3 segundos.
-- **Prende no primeiro segundo** se a primeira imagem já está em movimento e
-  faz uma pergunta visual.
-- **É salvo e compartilhado** quando o leitor aprende algo que pode repetir
-  para alguém ("sabia que o ícone de salvar é um disquete?").
-- **Constrói autoridade para o curso**: cada vídeo ensina um conceito de design
-  de verdade, sem vender nada.
+Pegar a estrutura, não o visual. O traço, os personagens e as cores do
+Kurzgesagt são deles; a animação usa a identidade da @studiodito.co.
 
-## Regras (as mesmas dos carrosséis)
+A estrutura que prende:
+1. **Uma pergunta enorme** que a pessoa nunca tinha feito e agora precisa saber
+   a resposta.
+2. **Escala:** números, tempo e distância que dão vertigem.
+3. **A explicação**, contada como história, com uma pessoa ou um momento real
+   no meio.
+4. **A virada:** o detalhe que muda como você enxerga o assunto.
+5. **O fecho reflexivo:** volta para a vida de quem está assistindo.
 
-- Informativo: nomes, datas, fatos conferidos. Item marcado **[conferir]**
-  precisa de fonte antes de animar.
-- Sem autopropaganda. Fecho com uma pergunta.
-- Gancho visual no primeiro segundo, não um título parado.
-- Loop: o último quadro emenda no primeiro sempre que der (aumenta o replay).
+Formato: 60 a 90 segundos, 9:16, narração em off, legenda na tela. Os temas
+fortes também rendem uma versão longa para o YouTube.
+
+Itens marcados **[conferir]** precisam de fonte antes de virar roteiro.
 
 ---
 
-## Série 1 · "Leis do design em 20 segundos"
+## Os temas
 
-Cada vídeo demonstra uma lei clássica com uma animação simples. É a série que
-mais constrói autoridade para o curso.
+### 1. Como avisar "perigo" para alguém daqui a 10 mil anos?
+- **Gancho:** "Em algum lugar debaixo da terra existe lixo que vai matar
+  qualquer pessoa que chegar perto pelos próximos 10 mil anos. Como avisar
+  alguém que não fala nenhuma língua que existe hoje?"
+- **História:** em 1981, o governo dos EUA reuniu linguistas, antropólogos e
+  designers na Human Interference Task Force para resolver isso. Saíram ideias
+  como uma "religião" que passaria o aviso de geração em geração e até gatos
+  que mudariam de cor perto da radiação.
+- **Virada:** o maior problema de design da humanidade não tem usuário vivo
+  para testar.
+- **Fecho:** tudo que a gente desenha hoje é uma mensagem para alguém que ainda
+  não nasceu.
+- **[conferir]:** os detalhes das propostas (Thomas Sebeok; "ray cats", de
+  Bastide e Fabbri) e o local (WIPP, no Novo México, ou Onkalo, na Finlândia).
 
-| # | Tema | Gancho na tela | O que a animação mostra |
-|---|---|---|---|
-| 1 | Lei de Fitts (Paul Fitts, 1954) | "Por que o botão de comprar é sempre gigante?" | Um cursor tentando acertar um botão pequeno e longe, depois um grande e perto. |
-| 2 | Lei de Hick (Hick e Hyman, 1952-53) | "Cardápio com 80 pratos te deixa com fome de quê?" | As opções se multiplicam na tela e um relógio de decisão acelera. |
-| 3 | Proximidade (Gestalt) | "Quantos grupos você vê?" | Os mesmos 12 pontos, só mudando o espaço entre eles, viram 2, 3 e 4 grupos. |
-| 4 | Lei de Jakob (Jakob Nielsen) | "Por que todo site tem o carrinho no canto direito?" | Um site com o carrinho fora do lugar e o cursor perdido procurando. |
-| 5 | Contraste e hierarquia | "Pra onde seu olho foi primeiro?" | Uma página neutra, e um único elemento muda de cor ou de tamanho. |
+### 2. 38 minutos achando que o mundo ia acabar, por causa de um menu
+- **Gancho:** "13 de janeiro de 2018. Um milhão de pessoas recebe no celular:
+  míssil a caminho, procure abrigo. Isto não é um teste."
+- **História:** o alerta falso no Havaí levou 38 minutos para ser desmentido. A
+  interface do sistema de alerta virou parte da investigação.
+- **Virada:** um teste e um alerta real ficavam lado a lado, quase iguais, numa
+  lista.
+- **Fecho:** design ruim quase nunca parece perigoso até o dia em que é.
+- **[conferir]:** o desenho exato da tela; as versões publicadas divergem.
 
-## Série 2 · "Por que é assim?" (origem de coisas que todo mundo usa)
+### 3. A cor que você está vendo agora não existe
+- **Gancho:** "Esse rosa não está no arco-íris. Não existe nenhuma luz com essa
+  cor. Seu cérebro inventou."
+- **História:** o magenta não tem comprimento de onda próprio. O olho recebe
+  vermelho e azul ao mesmo tempo e o cérebro cria uma cor para o meio que falta.
+- **Virada:** toda cor da sua tela é só vermelho, verde e azul enganando você.
+- **Fecho:** se a cor acontece no cérebro, a pergunta "você vê o mesmo vermelho
+  que eu?" não tem resposta.
+- **Bônus:** o rosa é uma das cores da paleta da conta.
 
-Linha do tempo animada, no espírito do carrossel da cadeira.
+### 4. A mensagem que mandamos para os aliens
+- **Gancho:** "Em 1972 a humanidade mandou uma placa para fora do sistema
+  solar. O público era alguém que nunca viu um ser humano."
+- **História:** a placa da sonda Pioneer, de Carl Sagan e Frank Drake, e depois
+  o Disco de Ouro da Voyager (1977). Como desenhar para quem não tem olhos
+  iguais aos nossos, nem matemática, nem cultura?
+- **Virada:** a placa recebeu críticas aqui mesmo, na Terra, por coisas que
+  "qualquer alienígena" deveria entender.
+- **Fecho:** todo design parte de uma suposição sobre quem vai olhar.
+- **[conferir]:** os créditos da arte (Linda Salzman Sagan) e as críticas
+  recebidas.
 
-| # | Tema | Gancho na tela | O que a animação mostra |
-|---|---|---|---|
-| 6 | Ícone de salvar | "Muita gente que clica aqui nunca viu um disquete." | O disquete encolhendo até virar ícone. |
-| 7 | Menu hambúrguer (Norm Cox, Xerox Star, 1981) [conferir] | "Esse ícone tem mais de 40 anos." | Três linhas saindo de uma tela antiga até chegar ao celular. |
-| 8 | Puxar para atualizar (Loren Brichter, Tweetie, 2008) [conferir] | "Alguém inventou esse gesto." | Um dedo puxando a tela, com o gesto virando padrão em vários apps. |
-| 9 | Cursor inclinado | "Por que a seta do mouse é torta?" | A seta pixelada nas primeiras telas, endireitando e voltando a entortar. [conferir: a história da baixa resolução] |
-| 10 | Teclado QWERTY | "Ele não foi feito pra você digitar rápido." | Teclas de máquina de escrever travando. [conferir: há versões contestadas dessa história] |
+### 5. O alfabeto que toda a humanidade entende
+- **Gancho:** "Você reconhece esse boneco em qualquer aeroporto do planeta.
+  Alguém precisou inventar."
+- **História:** de Otto Neurath (Isotype, anos 1920) aos pictogramas das
+  Olimpíadas de Tóquio (1964), criados para um evento em que quase ninguém
+  falava a língua local.
+- **Virada:** o "homem universal" das placas foi desenhado a partir de um tipo
+  de corpo bem específico.
+- **Fecho:** quem fica de fora quando um desenho tenta falar com todo mundo?
+- **[conferir]:** as datas e a equipe de Tóquio (Masaru Katsumie).
 
-## Série 3 · "IA por dentro" (IA sem hype, explicada com desenho)
+### 6. Uma IA leu mais do que você poderia ler em mil vidas
+- **Gancho:** "Se você lesse 24 horas por dia, desde o nascimento, morreria
+  antes de terminar 1% do que uma IA leu."
+- **História:** a escala dos dados de treino, mostrada como bibliotecas,
+  estádios, planetas.
+- **Virada:** mesmo assim, ela erra quantos dedos tem uma mão. Ler tudo não é
+  ter visto nada.
+- **Fecho:** o que você sabe por ter vivido nenhuma escala substitui.
+- **[conferir]:** todos os números (tamanho dos dados, tempo de leitura).
+  Usar ordem de grandeza com fonte, sem número inventado.
 
-| # | Tema | Gancho na tela | O que a animação mostra |
-|---|---|---|---|
-| 11 | Como uma IA gera imagem | "Toda imagem de IA começa assim:" (tela de chuvisco) | O ruído sendo limpo passo a passo até virar uma imagem (o processo de difusão). |
-| 12 | Por que IA erra mão e texto | "Conta os dedos." | Uma mão gerada com dedos a mais, e a explicação visual: ela aprende padrões, não anatomia. [conferir a explicação com fonte] |
-| 13 | A média de tudo | "Pede 'um café aconchegante' pra três IAs." | Três imagens quase iguais se sobrepondo até virar uma só (versão animada do carrossel do genérico). |
-| 14 | A IA que concorda | "Ela achou ótimo. De novo." | Um chat em que tudo vira joinha, até a pergunta certa quebrar o padrão (versão animada do carrossel da IA que concorda). |
-
-## Série 4 · "Seu olho te engana" (percepção e cor)
-
-A mais compartilhável: a pessoa manda para alguém ("você vê igual?").
-
-| # | Tema | Gancho na tela | O que a animação mostra |
-|---|---|---|---|
-| 15 | Ilusão do tabuleiro (Edward Adelson, MIT, 1995) | "Os quadrados A e B são da mesma cor." | O fundo sumindo devagar até as duas cores ficarem lado a lado. |
-| 16 | Contraste simultâneo | "Esse cinza muda de cor." | O mesmo quadrado cinza passeando por fundos diferentes. |
-| 17 | Por que o vermelho chama atenção | "Ache o botão em 1 segundo." | Uma grade monocromática com um único ponto colorido. |
-
-## Série 5 · "Feito pra te prender" (dark patterns)
-
-| # | Tema | Gancho na tela | O que a animação mostra |
-|---|---|---|---|
-| 18 | O cancelamento labirinto | "Assinar: 1 clique. Cancelar: …" | Um clique para entrar e um labirinto de telas para sair. |
-| 19 | A rolagem infinita (Aza Raskin, 2006) | "Esse feed não tem fim. De propósito." | Um polegar rolando sem parar, e o contador de tempo subindo. |
-| 20 | O pontinho vermelho | "Você tocou nele antes de terminar de ler isso." | Notificações se acumulando e a mão indo sozinha até elas. |
+### 7. Quantas horas da sua vida foram desenhadas por outra pessoa?
+- **Gancho:** "Some o tempo que você passa olhando para telas até os 80 anos."
+- **História:** o tempo de tela médio, transformado em anos de vida, e quanto
+  desse tempo cada app decide por você (o que aparece, em que ordem, quando
+  avisar).
+- **Virada:** a decisão mais importante de cada tela, o que vem primeiro, é
+  tomada por alguém que você nunca vai conhecer.
+- **Fecho:** não é para jogar o celular fora. É para lembrar que tudo aquilo foi
+  uma escolha.
+- **[conferir]:** o tempo médio de tela no Brasil (ex.: relatórios DataReportal).
 
 ---
 
 ## Por onde começar (minha recomendação)
 
-1. **#15 Ilusão do tabuleiro.** A revelação é visual, curta e muito
-   compartilhável. Ótimo primeiro vídeo para testar alcance.
-2. **#1 Lei de Fitts.** Abre a série que mais constrói autoridade para o curso.
-3. **#11 Como uma IA gera imagem.** Junta os dois pilares, design e IA, sem
-   hype.
-4. **#6 Ícone de salvar.** Nostalgia e curiosidade; conversa com o estilo do
-   carrossel da cadeira.
-
-**Frequência sugerida:** 1 animação por semana para começar, no lugar de um
-dos Reels falados (sugestão: domingo). Depois de 3 semanas, compare alcance,
-salvamentos e compartilhamentos com os Reels falados e ajuste.
+1. **#1 O aviso para daqui a 10 mil anos.** É o tema mais próximo da referência:
+   pergunta enorme, escala de tempo, uma história real e um fecho que fala de
+   design.
+2. **#2 O alerta falso do Havaí.** Tem tensão e um relógio correndo, e mostra o
+   design como algo que importa de verdade.
+3. **#3 A cor que não existe.** É curto, visual e muito compartilhável.
