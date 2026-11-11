@@ -117,3 +117,111 @@ Itens marcados **[conferir]** precisam de fonte antes de virar roteiro.
 2. **#2 O alerta falso do Havaí.** Tem tensão e um relógio correndo, e mostra o
    design como algo que importa de verdade.
 3. **#3 A cor que não existe.** É curto, visual e muito compartilhável.
+
+---
+
+## Mais temas (11/11/2026)
+
+### 8. Botões que não fazem nada
+- **Gancho:** "Aquele botão do semáforo que você aperta pra atravessar? Talvez
+  ele não esteja ligado a nada."
+- **História:** botões placebo: o de pedestre que não muda o sinal, o de
+  "fechar porta" do elevador que não fecha. Em 2004, o New York Times
+  contou que a maioria dos botões de pedestre de Nova York estava desligada.
+- **Virada:** às vezes o design existe só para você sentir que tem controle.
+- **Fecho:** quantos botões da sua vida digital são assim?
+- **[conferir]:** os números da reportagem e as regras dos elevadores.
+
+### 9. A eleição decidida por um desenho
+- **Gancho:** "Uma eleição presidencial decidida por 537 votos. E por uma
+  cédula mal desenhada."
+- **História:** a "cédula borboleta" de Palm Beach, na Flórida, em 2000:
+  nomes de um lado, furos no meio, e muita gente votou em quem não queria.
+- **Virada:** ninguém fez por mal. Foi uma tentativa de aumentar a letra para
+  facilitar a leitura.
+- **Fecho:** design não é enfeite. Às vezes ele decide quem governa.
+- **[conferir]:** a contagem final e os estudos sobre os votos trocados.
+
+### 10. Uma nave de 125 milhões de dólares perdida por causa de unidades
+- **Gancho:** "Em 1999, uma nave chegou a Marte e simplesmente sumiu."
+- **História:** na Mars Climate Orbiter, uma equipe usou libras-força e a
+  outra, newtons. Ninguém percebeu até ser tarde.
+- **Virada:** o erro não foi de cálculo. Foi de comunicação entre pessoas.
+- **Fecho:** todo projeto grande falha primeiro na conversa.
+- **[conferir]:** o valor da missão e o relatório da NASA.
+
+### 11. Carros elétricos são obrigados a fazer barulho
+- **Gancho:** "Esse carro é silencioso. Então alguém precisou desenhar um som
+  pra ele."
+- **História:** carros elétricos quase não fazem barulho em baixa velocidade,
+  o que é perigoso para pedestres, principalmente cegos. Leis na Europa e nos
+  EUA passaram a exigir um som artificial.
+- **Virada:** designers de som agora decidem como "soa" um carro que não tem
+  motor a explosão.
+- **Fecho:** o silêncio também é um problema de design.
+- **[conferir]:** as datas das leis (União Europeia, EUA).
+
+### 12. Até 1883, cada cidade tinha a sua própria hora
+- **Gancho:** "Meio-dia era quando o Sol estava lá em cima. Em cada cidade, num
+  horário diferente."
+- **História:** as ferrovias americanas tinham dezenas de horários locais. Em
+  1883, elas criaram os fusos horários para os trens não baterem.
+- **Virada:** o horário que você usa hoje foi desenhado por uma empresa de
+  trem.
+- **Fecho:** coisas que parecem naturais quase sempre foram uma decisão.
+- **[conferir]:** a data e o número de horários locais.
+
+### 13. A IA está ficando sem internet para ler
+- **Gancho:** "A IA já leu quase tudo o que a humanidade escreveu na internet.
+  E agora?"
+- **História:** pesquisadores estimam que o texto humano de boa qualidade
+  disponível para treino pode acabar em poucos anos. Uma saída é treinar IA com
+  texto feito por IA.
+- **Virada:** um estudo publicado na Nature em 2024 mostrou que treinar IA com
+  texto de IA, geração após geração, faz o modelo degenerar ("model collapse").
+- **Fecho:** o que você escreve com as suas palavras ficou mais valioso.
+- **[conferir]:** as projeções (Epoch AI) e o estudo (Shumailov et al., 2024).
+
+### 14. As teclas do celular mudam de tamanho enquanto você digita
+- **Gancho:** "Você acha que errou a letra. O teclado acha que sabe o que você
+  quis dizer."
+- **História:** teclados de celular aumentam por dentro, sem mostrar na tela, a
+  área das letras que você provavelmente vai digitar.
+- **Virada:** a interface mais usada do mundo muda o tempo todo, e você não vê.
+- **Fecho:** quanto do que você "escolhe" já foi previsto antes?
+- **[conferir]:** como isso funciona nos teclados atuais (iPhone, Android).
+
+### 15. Você não consegue desenhar um logo que vê todo dia
+- **Gancho:** "Desenha a maçã da Apple. Sem olhar."
+- **História:** num estudo da UCLA de 2015, só 1 em 85 pessoas desenhou o logo
+  da Apple sem erro, mesmo vendo ele todos os dias.
+- **Virada:** ver muito não é lembrar. O cérebro guarda o "suficiente" e
+  descarta o resto.
+- **Fecho:** o design mais visto do mundo pode ser o menos lembrado.
+- **[conferir]:** o estudo (Blake, Nazarian e Castel, 2015).
+
+### 16. O limite de 0,1 segundo
+- **Gancho:** "Existe um tempo exato em que uma tela parece instantânea."
+- **História:** desde 1993, o pesquisador Jakob Nielsen fala em três limites:
+  0,1 segundo parece instantâneo, 1 segundo mantém o raciocínio e 10 segundos
+  fazem a pessoa desistir.
+- **Virada:** muito "carregando" que você vê é desenhado para parecer mais
+  rápido do que é.
+- **Fecho:** a velocidade que você sente nem sempre é a velocidade real.
+- **[conferir]:** a fonte de Nielsen e a origem dos números.
+
+### 17. O Sol não é amarelo
+- **Gancho:** "Toda criança desenha o Sol amarelo. Ele é branco."
+- **História:** a luz do Sol é praticamente branca. Ele parece amarelo daqui
+  por causa da atmosfera, que espalha mais o azul.
+- **Virada:** a cor "certa" de muita coisa é a cor que a gente combinou.
+- **Fecho:** quantas certezas suas são só convenção?
+
+## Atualização da recomendação
+
+Para abrir a série, os mais fortes no estilo da referência:
+1. **#8 Botões que não fazem nada:** curioso, cotidiano, compartilhável.
+2. **#9 A eleição decidida por um desenho:** tensão alta e prova de que design
+   importa.
+3. **#13 A IA está ficando sem internet:** IA sem hype, com um fecho que valoriza
+   o trabalho humano.
